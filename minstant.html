@@ -71,17 +71,20 @@
 	<h2>Type in the box below to send a message!</h2>
 	<div class="row">
 		<div class="col-md-12">
-			<div class="well well-lg">
-			{{#each messages}}
-			{{> chat_message}}
-			{{/each}}
+			<div class="well well-lg all-messages ">
+				<p class="all-messages">
+					{{#each messages}}
+					{{> chat_message}}
+					{{/each}}
+				</p>
+
 			</div>	
 		</div>
 	</div>
     <div class="row">
 		<div class="col-md-12">
 			<form class="js-send-chat">
-			<input class="input" type="text" name="chat" placeholder="type a message here...">
+			<input class="input new-msg-input" type="text" name="chat" >
 			<button class="btn btn-default">send</button>
 		</form>
 		</div>
