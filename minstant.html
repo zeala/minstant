@@ -84,8 +84,18 @@
     <div class="row">
 		<div class="col-md-12">
 			<form class="js-send-chat">
-			<input class="input new-msg-input" type="text" name="chat" placeholder="Enter your message..." >
-			<button type="submit" class="btn btn-default">send</button>
+			<!--<input class="input new-msg-input"
+                   type="textarea"
+                   rows="3"
+                   name="chat" placeholder="Enter your message..." >-->
+                <div class="input-group form-group-inline">
+                    <textarea class="form-control custom-control"
+                              name="chat"
+                              placeholder="Enter your message..."
+                              rows="3" style="resize:none"></textarea>
+                    <button type="submit" class="btn btn-default">send</button>
+                </div>
+
 		</form>
 		</div>
 	</div>
@@ -93,7 +103,7 @@
 
 <!-- simple template that displays a message -->
 <template name="chat_message">
-    <span class="chat-message-wrapper">someone said: {{text}}</span>
+    <span class="chat-message-wrapper bubble2">someone said: {{text}}</span>
 
 	<br>
 </template>
