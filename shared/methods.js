@@ -3,7 +3,8 @@ Meteor.methods({
         var chat = Chats.findOne({_id:currentChatId});
         chat.messages = messages;
         // update the chat object in the database.
-        Chats.update({_id: chat._id}, chat);
+        Chats.update({"_id": chat._id}, chat);
+        return chat.messages;
     },
 
     createNewChatId: function(secondId){

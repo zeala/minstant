@@ -3,6 +3,10 @@ Meteor.publish("chats", function(){
     return Chats.find();
 });
 
+Meteor.publish("singleChat", function(chatId){
+    return Chats.find({_id: chatId});
+})
+
 Meteor.publish("users", function(){
     console.log("PUBLISHING METEOR USERS");
     console.log(Meteor.users.find());

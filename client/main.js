@@ -5,7 +5,10 @@ Meteor.startup(function(){
 Meteor.subscribe("chats", function(){
     Session.set("data_loaded", true);
 });
+
 Meteor.subscribe("users");
+
+var messages = new ReactiveVar(undefined);
 
 Router.configure({
     layoutTemplate: 'ApplicationLayout'
@@ -22,7 +25,6 @@ Router.route('/chat/:_id', function () {
 
     //first check if the data is loaded
     if (Session.get("data_loaded") == false){
-        console.log(" ================== data is not loaded yet ---- return")
         return;
     }
 
@@ -38,6 +40,8 @@ Router.route('/chat/:_id', function () {
     ]};
 
     var chat = Chats.findOne(filter);
+    console.log("found chat : ")
+    //console.log(chat)
     if (!chat){// no chat matching the filter - need to insert a new one
         chatId = Meteor.call("createNewChatId",this.params._id, function(error, result){
             if (error){
@@ -51,8 +55,8 @@ Router.route('/chat/:_id', function () {
     }
     else {// there is a chat going already - use that.
         chatId = chat._id;
-        console.log(" --- SETTING CHAT ID ")
         Session.set("chatId",chatId);
+        messages.set(chat.messages);
     }
 
     this.render("navbar", {to:"header"});
@@ -85,30 +89,31 @@ Template.available_user.helpers({
 })
 
 
-Template.chat_page.rendered = function(){
+/*Template.chat_page.rendered = function(){
     //console.log("$('. new-msg-input')");
     var field = $('.new-msg-input')
     //console.log( field);
     $('.new-msg-input').emoticonize();
     //console.log( $('.new-msg-input').emoticonize);
     $('.all-messages').emoticonize();
-}
+}*/
 
 
 Template.chat_page.created = function(){
     console.log("!!! chat page created");
-    Meteor.subscribe("chats");
-}
+    console.log("chat id from created : " + Session.get("chatId"));
+    this.subscribe("chats");
+    Meteor.subscribe("singleChat", Session.get("chatId"));
+
+};
 
 Template.chat_page.helpers({
-    messages:function(){
+    chat_messages:function(){
         var sessionChatId = Session.get("chatId");
-        Session.get("refreshRequired");
-        Session.set("refreshRequired", false);
         var chat = Chats.findOne({_id:Session.get("chatId")});
-        console.log(" all chat meesages from helper");
-        console.log(chat.messages);
+        return messages.get();
         return chat.messages;
+
     },
     other_user:function(){
         return ""
@@ -123,7 +128,7 @@ Template.chat_page.events({
         // see if we can find a chat object in the database
         // to which we'll add the message
         var chat = Chats.findOne({_id:Session.get("chatId")});
-        console.log(chat);
+        //console.log(chat);
         if (chat) {// ok - we have a chat to use
             var msgs = chat.messages; // pull the messages property
 
@@ -138,16 +143,20 @@ Template.chat_page.events({
             // reset the form
             event.target.chat.value = "";
             // put the messages array onto the chat object
-            $('.all-messages').emoticonize({delay: 500});
+            //$('.all-messages').emoticonize();//({delay: 500});
 
-            Meteor.call("addChatMessage", msgs, Session.get("chatId"));
-            $('.all-messages').emoticonize({delay: 500});
+            Meteor.call("addChatMessage", msgs, Session.get("chatId"), function(error, result){
+                //console.log(result);
+
+            });
+            //$('.all-messages').emoticonize();//({delay: 500});
+            chat.messages = msgs;
+
         }
 
         // stop the form from triggering a page reload
         event.preventDefault();
-        event.stopImmediatePropagation();
-        Session.set("refreshRequired", true);
+        messages.set(msgs);
 
     }
 })
