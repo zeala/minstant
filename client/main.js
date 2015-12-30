@@ -89,14 +89,9 @@ Template.available_user.helpers({
 })
 
 
-/*Template.chat_page.rendered = function(){
-    //console.log("$('. new-msg-input')");
-    var field = $('.new-msg-input')
-    //console.log( field);
-    $('.new-msg-input').emoticonize();
-    //console.log( $('.new-msg-input').emoticonize);
-    $('.all-messages').emoticonize();
-}*/
+Template.chat_page.rendered = function(){
+    $('.chat-message-wrapper').emoticonize({delay: 300});
+}
 
 
 Template.chat_page.created = function(){
@@ -111,7 +106,9 @@ Template.chat_page.helpers({
     chat_messages:function(){
         var sessionChatId = Session.get("chatId");
         var chat = Chats.findOne({_id:Session.get("chatId")});
-        return messages.get();
+        var msgs = messages.get();
+
+        return msgs;
         return chat.messages;
 
     },
@@ -149,7 +146,9 @@ Template.chat_page.events({
                 //console.log(result);
 
             });
-            //$('.all-messages').emoticonize();//({delay: 500});
+
+            setTimeout(emoticonize, 100);
+            //$('.chat-message-wrapper').emoticonize({delay: 300});
             chat.messages = msgs;
 
         }
@@ -157,6 +156,9 @@ Template.chat_page.events({
         // stop the form from triggering a page reload
         event.preventDefault();
         messages.set(msgs);
-
     }
-})
+});
+
+function emoticonize(){
+    $('.chat-message-wrapper').emoticonize({delay: 300});
+}
