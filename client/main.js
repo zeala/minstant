@@ -57,6 +57,7 @@ Router.route('/chat/:_id', function () {
         chatId = chat._id;
         Session.set("chatId",chatId);
         messages.set(chat.messages);
+        setTimeout(emoticonize, 300);
     }
 
     this.render("navbar", {to:"header"});
@@ -95,8 +96,6 @@ Template.chat_page.rendered = function(){
 
 
 Template.chat_page.created = function(){
-    console.log("!!! chat page created");
-    console.log("chat id from created : " + Session.get("chatId"));
     this.subscribe("chats");
     Meteor.subscribe("singleChat", Session.get("chatId"));
 
@@ -109,7 +108,6 @@ Template.chat_page.helpers({
         var msgs = messages.get();
 
         return msgs;
-        return chat.messages;
 
     },
     other_user:function(){
