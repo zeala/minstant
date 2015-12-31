@@ -6,7 +6,11 @@
 
 .avatar_chat_display{
     display: inline;
-    padding-top: 15px;
+    padding-top: 7px;
+}
+
+.chatContent{
+    margin: 0 0 0 10px;
 }
 
 .bubble2 {
@@ -25,8 +29,8 @@
     padding: 15px 25px;
     position: relative;
     text-shadow: 0 1px 1px hsla(0,0%,100%,.5);
-    max-width: 300px;
-    margin: 10px 0;
+    max-width: 350px;
+    margin: 2px 0;
 }
 .bubble2:after, .bubble2:before {
     border-bottom: 15px solid transparent;
@@ -44,7 +48,7 @@
 
 
 .bubble {
-    background-color: #cfe4fe;
+    background-color: #FFF0A0;
     background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
     background-image:    -moz-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
     background-image:     -ms-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
@@ -59,8 +63,8 @@
     padding: 15px 25px;
     position: relative;
     text-shadow: 0 1px 1px hsla(0,0%,100%,.5);
-    max-width: 300px;
-    margin: 10px 0;
+    max-width: 350px;
+    margin: 2px 0;
 }
 .bubble:after, .bubble:before {
     border-bottom: 15px solid transparent;

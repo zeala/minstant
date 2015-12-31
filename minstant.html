@@ -74,7 +74,7 @@
 	<div class="row">
 		<div class="col-md-12">
 			<div id="chatContainer" class="well well-lg all-messages ">
-				<p>
+				<p class="chatContent">
 					{{#each chat_messages}}
 					{{> chat_message}}
 					{{/each}}
@@ -86,10 +86,6 @@
     <div class="row">
 		<div class="col-md-12">
 			<form class="js-send-chat">
-			<!--<input class="input new-msg-input"
-                   type="textarea"
-                   rows="3"
-                   name="chat" placeholder="Enter your message..." >-->
                 <div class="input-group form-group-inline">
                     <textarea id="textAreaNewChat" class="form-control custom-control"
                               name="chat"
@@ -106,8 +102,15 @@
 <!-- simple template that displays a message -->
 <template name="chat_message">
     <div class="row">
-        <span class="avatar_chat_display col-xs-2">{{> avatar user=user shape="circle"}}</span>
-        <span class="chat-message-wrapper  col-xs-10 bubble2">someone said: {{text}}</span>
+        {{#if isSecondUser}}
+            <span class="avatar_chat_display col-xs-2">{{> avatar user=user size="mySize" shape="circle"}}</span>
+        {{/if}}
+        <span class="chat-message-wrapper col-xs-10 {{#if isSecondUser}}bubble2 {{/if }} {{#if isCurrentUser}}bubble {{/if }}">
+            {{username}} - {{text}}</span>
+
+        {{#if isCurrentUser}}
+                <span class="avatar_chat_display col-xs-2">{{> avatar user=user shape="circle"}}</span>
+        {{/if}}
     </div>
 	<br>
 </template>

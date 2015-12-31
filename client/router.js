@@ -54,4 +54,5 @@ Router.route('/chat/:_id', function () {
 
 function emoticonize(){
     $('.chat-message-wrapper').emoticonize({delay: 300});
+    $("#chatContainer").animate({scrollTop:$("#chatContainer")[0].scrollHeight}, 1000);
 }

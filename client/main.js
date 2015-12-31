@@ -1,6 +1,9 @@
-/*Accounts.ui.config({
-    passwordSignupFields: "USERNAME_AND_EMAIL"
-});*/
+Avatar.setOptions({
+    imageSizes: {
+        'large': 80,
+        'mySize': 40
+    }
+});
 
 Meteor.startup(function(){
     Session.set("data_loaded", false);
@@ -34,7 +37,6 @@ Template.available_user.helpers({
         var userImage = user.profile.avatar;
 
         userImage = userImage ? userImage : "ava1.png";
-        console.log("userImage : " + userImage+ " username : " + user.profile.username);
         return userImage;
     },
     isMyUser:function(userId){
@@ -76,10 +78,35 @@ Template.chat_page.helpers({
 });
 
 Template.chat_message.helpers({
+    username: function(){
+        var chatMessage = Template.currentData();
+        var user = Meteor.users.findOne({"_id":chatMessage.userId});
+        if (user){
+            var name = user.profile.username ? user.profile.username : user.profile.name;
+            name = name ? name : "You ";
+            return name;
+        }
+        return;
+    },
+
     user: function(){
-        console.log( " --- from chat message --- ")
-        console.log(Template.currentData());
-        console.log(Template.parentData())
+        var chatMessage = Template.currentData();
+        var user = Meteor.users.findOne({"_id":chatMessage.userId});
+        return user;
+    },
+
+    isCurrentUser: function(){
+        var chatMessage = Template.currentData();
+        var user = Meteor.users.findOne({"_id":chatMessage.userId});
+        var currentUser = Meteor.user();
+        return user._id == currentUser._id;
+    },
+
+    isSecondUser: function(){
+        var chatMessage = Template.currentData();
+        var user = Meteor.users.findOne({"_id":chatMessage.userId});
+        var currentUser = Meteor.user();
+        return user._id != currentUser._id;
     }
 })
 
