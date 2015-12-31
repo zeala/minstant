@@ -86,27 +86,44 @@ Template.chat_message.helpers({
 Template.chat_page.events({
     'submit .js-send-chat':function(event){
 
-        var chat = Chats.findOne({_id:Session.get("chatId")});
-        if (chat) {// ok - we have a chat to use
-            var msgs = chat.messages; // pull the messages property
-
-            if (!msgs) {// no messages yet, create a new array
-                msgs = [];
-                console.log(" no chat messages yet")
-            }
-            msgs.push({text: event.target.chat.value, userId: Meteor.userId()});
-            // reset the form
-            event.target.chat.value = "";
-
-            Meteor.call("addChatMessage", msgs, Session.get("chatId"), function(error, result){
-            });
-
-            setTimeout(emoticonize, 100);
-            chat.messages = msgs;
-        }
+        sendChat(event);
         event.preventDefault();
+    },
+
+    'keyup #textAreaNewChat': function(event){
+        console.log(event.keyCode)
+        if (event.keyCode == 13 && !event.ctrlKey) {
+            sendChat(event);
+            event.preventDefault();
+        }else if (event.keyCode == 13 && event.ctrlKey){
+            $(this).val(function(i,val){
+                return val + "\n";
+            });
+        }
     }
 });
+
+
+function sendChat(event){
+    var chat = Chats.findOne({_id:Session.get("chatId")});
+    if (chat) {// ok - we have a chat to use
+        var msgs = chat.messages; // pull the messages property
+
+        if (!msgs) {// no messages yet, create a new array
+            msgs = [];
+            console.log(" no chat messages yet")
+        }
+        msgs.push({text: $('#textAreaNewChat').val(), userId: Meteor.userId()});
+        // reset the form
+        $('#textAreaNewChat').val("");
+
+        Meteor.call("addChatMessage", msgs, Session.get("chatId"), function(error, result){
+        });
+
+        setTimeout(emoticonize, 100);
+        chat.messages = msgs;
+    }
+}
 
 function emoticonize(){
     $('.chat-message-wrapper').emoticonize({delay: 300});
