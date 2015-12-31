@@ -6,7 +6,6 @@ Router.route('/', function () {
     console.log("rendering root /");
     this.render("navbar", {to:"header"});
     this.render("lobby_page", {to:"main"});
-    this.render("editYourAvatarModal", {to:"extra"})
 });
 
 // specify a route that allows the current user to chat to another users

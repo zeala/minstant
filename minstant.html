@@ -53,13 +53,13 @@
 			{{#if isMyUser _id}} 
 			<div class="bg-success">{{getUsername _id}} (YOU)
 				<br/>
-				<img src="{{profile.avatar}}" class="avatar_img">			
+				<img src="/{{userImage _id}}" class="avatar_img">
 			</div>
 			{{else}}
 			<a href="/chat/{{_id}}">
 				{{getUsername _id}}
 				<br/>
-				<img src="{{profile.avatar}}" class="avatar_img">
+				<img src="/{{userImage _id}}" class="avatar_img">
 			</a>
 			{{/if}}
 		</div>
@@ -73,8 +73,8 @@
 	<h2>Type in the box below to send a message!</h2>
 	<div class="row">
 		<div class="col-md-12">
-			<div class="well well-lg all-messages ">
-				<p class="all-messages">
+			<div id="chatContainer" class="well well-lg all-messages ">
+				<p>
 					{{#each chat_messages}}
 					{{> chat_message}}
 					{{/each}}
@@ -105,8 +105,10 @@
 
 <!-- simple template that displays a message -->
 <template name="chat_message">
-    <span class="chat-message-wrapper bubble2">someone said: {{text}}</span>
-
+    <div class="row">
+        <span class="avatar_chat_display col-xs-2">{{> avatar user=user shape="circle"}}</span>
+        <span class="chat-message-wrapper  col-xs-10 bubble2">someone said: {{text}}</span>
+    </div>
 	<br>
 </template>
 

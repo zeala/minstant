@@ -1,3 +1,14 @@
+.all-messages{
+    max-height: 450px;
+    max-width: 500px;
+    overflow-y: scroll;
+}
+
+.avatar_chat_display{
+    display: inline;
+    padding-top: 15px;
+}
+
 .bubble2 {
     background-color: #cfe4fe;
     background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
