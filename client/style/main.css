@@ -25,6 +25,10 @@
     background-color: cornsilk;
 }
 
+.js-send-chat{
+    padding-left: 0 !important;
+}
+
 .bubble2 {
     background-color: #cfe4fe;
     background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));

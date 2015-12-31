@@ -25,7 +25,16 @@ Template.available_user_list.helpers({
         console.log(Meteor.users.find().fetch());
         return Meteor.users.find();
     }
+});
+
+Template.all_users.helpers({
+    users:function(){
+        console.log("available user list");
+        console.log(Meteor.users.find().fetch());
+        return Meteor.users.find();
+    }
 })
+
 Template.available_user.helpers({
     getUsername:function(userId){
         user = Meteor.users.findOne({_id:userId});

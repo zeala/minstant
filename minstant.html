@@ -10,7 +10,16 @@
 	{{> yield "header"}}
 	
 	<div class="container">
-	{{> yield "main"}}
+        <div class="row col-xs-12">
+            <div class="col-md-3">
+            {{> yield "left"}}
+            </div>
+            <div  class="col-md-9">
+                {{> yield "main"}}
+            </div>
+
+        </div>
+
 	</div>
 
 </template>
@@ -34,6 +43,17 @@
 <!-- Top level template for the lobby page -->
 <template name="lobby_page">
 	{{> available_user_list}}
+</template>
+
+<template name="all_users">
+    <div class="well">
+        <ul class="unstyled">
+            {{#each users}}
+                Blah
+                <br/>
+            {{/each}}
+        </ul>
+    </div>
 </template>
 
 <!-- display a list of users -->

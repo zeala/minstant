@@ -50,6 +50,7 @@ Router.route('/chat/:_id', function () {
 
     this.render("navbar", {to:"header"});
     this.render("chat_page", {to:"main"});
+    this.render("all_users", {to:"left"});
 });
 
 function emoticonize(){
