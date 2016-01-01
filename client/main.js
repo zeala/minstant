@@ -2,7 +2,7 @@ Avatar.setOptions({
     imageSizes: {
         'large': 80,
         'mySize': 50,
-        'extra-small': 25
+        'extra-small': 32
     },
     customImageProperty: function(){
         var user = this;
@@ -61,6 +61,13 @@ Template.all_users.helpers({
         }
     },
 
+    myUser:function(){
+        return Meteor.user()
+    },
+
+    isSecondUser: function(userId){
+       return   userId != Meteor.userId();
+    },
     displayUserName: function(userId){
         user = Meteor.users.findOne({_id:userId});
         var profileUserName = user.profile ? user.profile.username : undefined;

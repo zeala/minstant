@@ -2,7 +2,7 @@ Avatar.setOptions({
     imageSizes: {
         'large': 80,
         'mySize': 50,
-        'extra-small': 25
+        'extra-small': 32
     },
     customImageProperty: function(){
         var user = this;

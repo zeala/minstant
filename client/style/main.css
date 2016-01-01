@@ -1,3 +1,16 @@
+body{
+    background-color: lightsteelblue;
+}
+
+.navbar{
+    margin-bottom: 0;
+}
+.navbar-inverse{
+    background-color: #555555;
+    border-color: #444444;
+    color: #cccccc
+}
+
 .all-messages{
     max-height: 450px;
     max-width: 500px;

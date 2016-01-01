@@ -26,7 +26,7 @@
 
 <!-- top level template for the nav bar -->
 <template name="navbar">
-<nav class="navbar navbar-default">
+<nav class="navbar navbar-inverse">
   <div class="container-fluid">
     <div class="navbar-header">
       <a class="navbar-brand" href="/">
@@ -46,19 +46,30 @@
 </template>
 
 <template name="all_users">
-    <div class="well">
+    <div class="well" style="{ } ">
+        <div class="row" style="{background-color: lightsteelblue; padding-top: 5px; padding-bottom: 5px; border-radius: 3px}">
+            <div class="col-xs-3">
+                {{> avatar user=myUser shape="circle" }}
+            </div>
+            <div class="col-xs-9">
+                {{ displayUserName myUser._id}}
+            </div>
+        </div>
+        <br/>
         <ul class="unstyled all-users-left-panel">
             {{#each users}}
-                <div class="row all-users-list-item">
-                    <a href="/chat/{{_id}}">
-                        <div class="col-xs-2">
-                            {{> avatar user=this size="extra-small" shape="circle" }}
-                        </div>
-                        <div class="col-xs-10">
-                            {{ displayUserName _id}}
-                        </div>
-                    </a>
-                </div>
+                {{#if isSecondUser _id}}
+                    <div class="row all-users-list-item" style="{border-bottom: dashed 1px gray}">
+                        <a href="/chat/{{_id}}">
+                            <div class="col-xs-2">
+                                {{> avatar user=this size="extra-small" shape="circle" }}
+                            </div>
+                            <div class="col-xs-10">
+                                {{ displayUserName _id}}
+                            </div>
+                        </a>
+                    </div>
+                {{/if}}
             {{/each}}
         </ul>
     </div>
