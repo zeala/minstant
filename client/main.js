@@ -63,8 +63,6 @@ Template.all_users.helpers({
 
     displayUserName: function(userId){
         user = Meteor.users.findOne({_id:userId});
-        console.log(" ---- display user name")
-        console.log(user);
         var profileUserName = user.profile ? user.profile.username : undefined;
         var username = profileUserName ? profileUserName : user.username;
         return username;
@@ -103,7 +101,7 @@ Template.chat_page.rendered = function(){
 Template.chat_page.created = function(){
     this.subscribe("chats");
     Meteor.subscribe("singleChat", Session.get("chatId"));
-
+    this.enteredEmoticon = new ReactiveVar("");
 };
 
 Template.chat_page.helpers({
@@ -119,7 +117,15 @@ Template.chat_page.helpers({
     other_user:function(){
         return ""
     },
+    selectEmoticonCallback: function(val){
+        console.log(val);
+        var callback = function(val){
+            console.log( " val from callback : " + val);
+            $('#textAreaNewChat').val($('#textAreaNewChat').val() + " " + val);
+        };
 
+        return callback;
+    }
 });
 
 Template.chat_message.helpers({
@@ -159,7 +165,8 @@ Template.chat_message.helpers({
             return user._id != currentUser._id;
         }
         return null;
-    }
+    },
+
 })
 
 Template.chat_page.events({
