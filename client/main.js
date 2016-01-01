@@ -1,8 +1,20 @@
 Avatar.setOptions({
     imageSizes: {
         'large': 80,
-        'mySize': 40
-    }
+        'mySize': 50,
+        'extra-small': 25
+    },
+    customImageProperty: function(){
+        var user = this;
+
+        if (user && user.profile && user.profile.avatar)
+        {
+            console.log("user.profile.avatar : " + user.profile.avatar);
+            return "/"+ user.profile.avatar;
+        }
+        return null;
+    },
+    fallbackType: "initials",
 });
 
 Meteor.startup(function(){
@@ -32,6 +44,30 @@ Template.all_users.helpers({
         console.log("available user list");
         console.log(Meteor.users.find().fetch());
         return Meteor.users.find();
+    },
+    userImage: function(userId){
+        user = Meteor.users.findOne({_id:userId});
+        var userImage = user.profile.avatar;
+
+        userImage = userImage ? userImage : "ava1.png";
+        return userImage;
+    },
+    isMyUser:function(userId){
+        if (userId == Meteor.userId()){
+            return true;
+        }
+        else {
+            return false;
+        }
+    },
+
+    displayUserName: function(userId){
+        user = Meteor.users.findOne({_id:userId});
+        console.log(" ---- display user name")
+        console.log(user);
+        var profileUserName = user.profile ? user.profile.username : undefined;
+        var username = profileUserName ? profileUserName : user.username;
+        return username;
     }
 })
 
@@ -108,14 +144,21 @@ Template.chat_message.helpers({
         var chatMessage = Template.currentData();
         var user = Meteor.users.findOne({"_id":chatMessage.userId});
         var currentUser = Meteor.user();
-        return user._id == currentUser._id;
+        if (user && currentUser) {
+            return user._id == currentUser._id;
+        }
+        return null;
     },
 
     isSecondUser: function(){
         var chatMessage = Template.currentData();
         var user = Meteor.users.findOne({"_id":chatMessage.userId});
         var currentUser = Meteor.user();
-        return user._id != currentUser._id;
+        if (user && currentUser)
+        {
+            return user._id != currentUser._id;
+        }
+        return null;
     }
 })
 

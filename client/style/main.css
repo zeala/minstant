@@ -29,6 +29,32 @@
     padding-left: 0 !important;
 }
 
+.all-users-left-panel{
+    -webkit-padding-start: 15px !important;
+    -moz-padding-start: 15px;
+
+}
+.avatar-div-left-panel{
+    width: 50px;
+}
+
+.left-panel{
+    width: 240px;
+    float: left;
+    margin-right: 10px;
+}
+
+.main-panel{
+    float: left;
+    width: auto;
+    margin-left: 10px;
+}
+
+.all-users-list-item{
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
 .bubble2 {
     background-color: #cfe4fe;
     background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
