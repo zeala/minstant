@@ -89,6 +89,10 @@ Template.available_user.helpers({
         userImage = userImage ? userImage : "ava1.png";
         return userImage;
     },
+    user: function(userId){
+        user = Meteor.users.findOne({_id:userId});
+        return user;
+    },
     isMyUser:function(userId){
         if (userId == Meteor.userId()){
             return true;
