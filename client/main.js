@@ -26,6 +26,8 @@ Meteor.subscribe("chats", function(){
 
 Meteor.subscribe("users");
 
+Meteor.subscribe("userStatus");
+
 
 ///
 // helper functions

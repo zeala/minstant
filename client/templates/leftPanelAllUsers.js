@@ -42,12 +42,39 @@ Template.all_users.helpers({
         return userId == secondUserId;
 
     },
+    lastVisited: function(userId){
+        var sessionChatId = Session.get("chatId");
+        var filter = {$or:[
+            {user1Id:Meteor.userId(), user2Id:userId},
+            {user2Id:Meteor.userId(), user1Id:userId}
+        ]};
+
+        var chat = Chats.findOne(filter);
+
+        var dict = Template.instance().chatroomVisits;
+        if (dict && dict[chat._id]){
+            var timeLeftChat = dict[chat._id].timeLeft;
+            if (timeLeftChat)
+            {
+                var formattedTime = moment(timeLeftChat).format("ddd hh:mm");
+                return formattedTime;
+            }
+            return dict[chat._id].timeLeft;
+        }
+        return;
+    },
+
+    isUserOnline: function(userId){
+        var user = Meteor.users.findOne({_id:userId});
+        console.log("user.status.onelin : " + user.status.online);
+        return user.status.online == true;
+    },
 
     isNotMainUser: function(userId){
         return   userId != Meteor.userId();
     },
     displayUserName: function(userId){
-        user = Meteor.users.findOne({_id:userId});
+        var user = Meteor.users.findOne({_id:userId});
         var profileUserName = user.profile ? user.profile.username : undefined;
         var username = profileUserName ? profileUserName : user.username;
         return username;

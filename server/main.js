@@ -29,7 +29,11 @@ Meteor.publish("users", function(){
     console.log("PUBLISHING METEOR USERS");
     console.log(Meteor.users.find());
     return Meteor.users.find();
-})
+});
+Meteor.publish("userStatus", function() {
+    return Meteor.users.find({ "status.online": true });
+});
+
 
 
 Meteor.startup(function () {

@@ -5,7 +5,10 @@
                 {{> avatar user=myUser shape="circle" }}
             </div>
             <div class="col-xs-9">
-                {{ displayUserName myUser._id}} chats: {{myChats.length}}
+                {{ displayUserName myUser._id}}
+                <span><i class="fa fa-circle"
+                   style=" {color: {{#if isUserOnline myUser._id}} green {{else}} lightgrey {{/if}} }">
+                </i></span>
             </div>
         </div>
         <br/>
@@ -14,11 +17,15 @@
                 {{#if isNotMainUser _id}}
                     <div class="row all-users-list-item {{#if isSecondUser _id}}second-user-left-panel {{/if}}">
                         <a href="/chat/{{_id}}" class="js-chatroom-visits">
-                            <div class="col-xs-2">
+                            <div class="col-xs-2" style="{padding-left: 0}">
                                 {{> avatar user=this size="extra-small" shape="circle" }}
                             </div>
                             <div class="col-xs-10">
-                                {{ displayUserName _id}}
+                                {{ displayUserName _id}} <span style="{font-size: 8px}">
+                                    {{ lastVisited _id }}
+                                <i class="fa fa-circle"
+                                   style=" {color: {{#if isUserOnline _id}} green {{else}} lightgrey {{/if}} }">
+                                </i></span>
                             </div>
                         </a>
                     </div>

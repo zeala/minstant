@@ -18,7 +18,7 @@ Router.route('/chat/:_id', function () {
 
 
     // the user they want to chat to has id equal to
-    // the id sent in after /chat/...
+    // the id sent in after /chat/...var chats = Chats.find({$or:[{ user1Id: userId}, {user2Id: userId }]}).fetch();
     var otherUserId = this.params._id;
     // find a chat that has two users that match current user id
     // and the requested user id
