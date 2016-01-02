@@ -11,10 +11,7 @@
 	
 	<div class="container">
         <div class="row col-xs-12">
-            <div class="left-panel">
-            {{> yield "left"}}
-            </div>
-            <div  class="main-panel">
+            <div>
                 {{> yield "main"}}
             </div>
 
@@ -45,35 +42,6 @@
 	{{> available_user_list}}
 </template>
 
-<template name="all_users">
-    <div class="well" style="{ } ">
-        <div class="row" style="{background-color: lightsteelblue; padding-top: 5px; padding-bottom: 5px; border-radius: 3px}">
-            <div class="col-xs-3">
-                {{> avatar user=myUser shape="circle" }}
-            </div>
-            <div class="col-xs-9">
-                {{ displayUserName myUser._id}}
-            </div>
-        </div>
-        <br/>
-        <ul class="unstyled all-users-left-panel">
-            {{#each users}}
-                {{#if isSecondUser _id}}
-                    <div class="row all-users-list-item" style="{border-bottom: dashed 1px gray}">
-                        <a href="/chat/{{_id}}">
-                            <div class="col-xs-2">
-                                {{> avatar user=this size="extra-small" shape="circle" }}
-                            </div>
-                            <div class="col-xs-10">
-                                {{ displayUserName _id}}
-                            </div>
-                        </a>
-                    </div>
-                {{/if}}
-            {{/each}}
-        </ul>
-    </div>
-</template>
 
 <!-- display a list of users -->
 <template name="available_user_list">
@@ -106,47 +74,56 @@
 
 <!-- Top level template for the chat page -->
 <template name="chat_page">
-	<div class="row">
-		<div class="col-md-12">
-			<div id="chatContainer" class="well well-lg all-messages ">
-				<p class="chatContent">
-					{{#each chat_messages}}
-					{{> chat_message}}
-					{{/each}}
-				</p>
+    <div class="well row" style="{background-color: lightgray">
 
-			</div>	
-		</div>
-	</div>
-    <div class="row">
-		<div class="col-md-12">
-            {{#if currentUser}}
-			<form class="js-send-chat col-xs-12" id="submitChatForm">
-                <div class="row col-xs-12" style="{width: 500px; overflow: hidden}">
-                    <div style="{float: left; width: 250px; margin-right: 12px}">
-                    <textarea id="textAreaNewChat" class="form-control custom-control"
-                              name="chat"
-                              placeholder="Enter your message..."
-                              rows="3"
-                              style="{float: left; resize: none}"
-                            ></textarea>
-                    </div>
-                    <div style="{width: 205px; float: left}">
-                        {{> emoticons callback=selectEmoticonCallback}}
-                    </div>
-                    <br/>
-                    <div>
-
-                        <button type="submit" class="btn btn-default submit-chat-btn">send</button>
-                    </div>
-                </div>
-		</form>
-            {{else}}
-                <h5>Please login to post chat messages</h5>
-            {{/if}}
-
+        <div class="left-panel">
+                {{> all_users }}
         </div>
-	</div>
+
+
+        <div class="main-panel">
+            <div class="col-md-12">
+                <div id="chatContainer" class="well row well-lg all-messages ">
+                    <p class="chatContent">
+                        {{#each chat_messages}}
+                        {{> chat_message}}
+                        {{/each}}
+                    </p>
+
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    {{#if currentUser}}
+                        <form class="js-send-chat col-xs-12" id="submitChatForm">
+                            <div class="row col-xs-12" style="{width: 500px; overflow: hidden}">
+                                <div style="{float: left; width: 250px; margin-right: 12px}">
+                        <textarea id="textAreaNewChat" class="form-control custom-control"
+                                  name="chat"
+                                  placeholder="Enter your message..."
+                                  rows="3"
+                                  style="{float: left; resize: none}"
+                                ></textarea>
+                                </div>
+                                <div style="{width: 205px; float: left}">
+                                    {{> emoticons callback=selectEmoticonCallback}}
+                                </div>
+                                <br/>
+                                <div>
+
+                                    <button type="submit" class="btn btn-default submit-chat-btn">send</button>
+                                </div>
+                            </div>
+                        </form>
+                    {{else}}
+                        <h5>Please login to post chat messages</h5>
+                    {{/if}}
+
+                </div>
+            </div>
+        </div>
+
+    </div>
 </template>
 
 <!-- simple template that displays a message -->

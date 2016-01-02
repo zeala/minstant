@@ -1,0 +1,29 @@
+<template name="all_users">
+    <div class="well" style="{ } ">
+        <div class="row" style="{background-color: lightsteelblue; padding-top: 5px; padding-bottom: 5px; border-radius: 3px}">
+            <div class="col-xs-3">
+                {{> avatar user=myUser shape="circle" }}
+            </div>
+            <div class="col-xs-9">
+                {{ displayUserName myUser._id}} chats: {{myChats.length}}
+            </div>
+        </div>
+        <br/>
+        <ul class="unstyled all-users-left-panel">
+            {{#each users}}
+                {{#if isNotMainUser _id}}
+                    <div class="row all-users-list-item {{#if isSecondUser _id}}second-user-left-panel {{/if}}">
+                        <a href="/chat/{{_id}}" class="js-chatroom-visits">
+                            <div class="col-xs-2">
+                                {{> avatar user=this size="extra-small" shape="circle" }}
+                            </div>
+                            <div class="col-xs-10">
+                                {{ displayUserName _id}}
+                            </div>
+                        </a>
+                    </div>
+                {{/if}}
+            {{/each}}
+        </ul>
+    </div>
+</template>

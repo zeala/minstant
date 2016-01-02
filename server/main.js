@@ -9,7 +9,6 @@ Avatar.setOptions({
 
         if (user && user.profile && user.profile.avatar)
         {
-            console.log("user.profile.avatar : " + user.profile.avatar);
             return "/"+ user.profile.avatar;
         }
         return null;

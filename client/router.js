@@ -36,8 +36,6 @@ Router.route('/chat/:_id', function () {
                 console.log(error);
                 return;
             }
-            console.log("!!!! GOT NEW CHAT ID ")
-            //Session.set("chatId",chatId);
         } );
 
     }
@@ -50,7 +48,7 @@ Router.route('/chat/:_id', function () {
 
     this.render("navbar", {to:"header"});
     this.render("chat_page", {to:"main"});
-    this.render("all_users", {to:"left"});
+    //this.render("all_users", {to:"left"});
 });
 
 function emoticonize(){
