@@ -66,8 +66,7 @@ Template.all_users.helpers({
 
     isUserOnline: function(userId){
         var user = Meteor.users.findOne({_id:userId});
-        console.log("user.status.onelin : " + user.status.online);
-        return user.status.online == true;
+        return user && user.status.online == true;
     },
 
     isNotMainUser: function(userId){
@@ -86,6 +85,20 @@ Template.all_users.helpers({
         console.log(Chats.find().fetch())
         var chats = Chats.find({$or:[{ user1Id: userId}, {user2Id: userId }]}).fetch();
         return chats;
+    },
+
+    inactiveChatMessagesCount: function(userId){
+
+        var messages = getInactiveChatMessages(userId);
+        return messages && messages.length > 0 ? messages.length : undefined;
+    },
+
+    isInactiveWithMessages: function(userId){
+        var messages = getInactiveChatMessages(userId);
+
+        console.log("IS INACTIVE WITH MESSAGES ");
+        console.log(messages);
+        return messages && messages && messages.length > 0;
     }
 });
 
@@ -119,6 +132,38 @@ Template.all_users.events({
         console.log(Template.instance().chatroomVisits);
     }
 });
+
+
+function getInactiveChatMessages(userId){
+    var chatUpdated = Session.get("chatUpdated");
+    console.log("chat updated " + chatUpdated);
+    var filter = {$or:[
+        {user1Id:Meteor.userId(), user2Id:userId},
+        {user2Id:Meteor.userId(), user1Id:userId}
+    ]};
+
+    var chat = Chats.findOne(filter);
+
+    if(!chat || chat.messages == undefined || chat.messages.length == 0){
+        return;
+    };
+
+    var activeSessionChat = Session.get("chatId");
+
+
+    if (chat._id == activeSessionChat){
+        return;
+    }
+
+    var dict = Template.instance().chatroomVisits;
+    var lastVisited = dict[chat._id] ? dict[chat._id].timeLeft : dict.startTime;
+
+    if ( !chat || ! chat.messages) return;
+    var messages = chat.messages.filter(function(element){
+        return element.timestamp > lastVisited;
+    });
+    return messages;
+}
 
 function updateEnterTimestamp(chatId){
 

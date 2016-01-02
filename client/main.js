@@ -186,6 +186,7 @@ function sendChat(event){
 
         setTimeout(emoticonize, 100);
         chat.messages = msgs;
+        Session.set("chatUpdated", chat._id);
     }
 }
 

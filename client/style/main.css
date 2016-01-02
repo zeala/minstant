@@ -53,8 +53,21 @@ body{
 }
 
 .second-user-left-panel{
+    /*background: #FFF8C8;*/
+    background-color: #CFE4FE;
+    border: inset 1px #CFE4FE;
+    border-radius: 5px;
+}
+
+.inactive-chatroom-with-chat-messages{
     background: #FFF8C8;
-    border-radius: 3px;
+    border-radius: 5px;
+}
+
+.inactive-chatroom-with-messages-badge{
+    padding: 2px 4px;
+    font-size: 10px;
+    background-color: #337ab7;
 }
 
 .left-panel{

@@ -1,6 +1,6 @@
 <template name="all_users">
     <div class="well" style="{ } ">
-        <div class="row" style="{background-color: lightsteelblue; padding-top: 5px; padding-bottom: 5px; border-radius: 3px}">
+        <div class="row" style="{background-color: lightsteelblue; padding-top: 5px; padding-bottom: 5px; border-radius: 6px}">
             <div class="col-xs-3">
                 {{> avatar user=myUser shape="circle" }}
             </div>
@@ -15,17 +15,18 @@
         <ul class="unstyled all-users-left-panel">
             {{#each users}}
                 {{#if isNotMainUser _id}}
-                    <div class="row all-users-list-item {{#if isSecondUser _id}}second-user-left-panel {{/if}}">
+                    <div class="row all-users-list-item {{#if isSecondUser _id}}second-user-left-panel
+                            {{else}} {{#if isInactiveWithMessages _id}} inactive-chatroom-with-chat-messages {{/if}} {{/if}}">
                         <a href="/chat/{{_id}}" class="js-chatroom-visits">
                             <div class="col-xs-2" style="{padding-left: 0}">
                                 {{> avatar user=this size="extra-small" shape="circle" }}
                             </div>
                             <div class="col-xs-10">
-                                {{ displayUserName _id}} <span style="{font-size: 8px}">
-                                    {{ lastVisited _id }}
+                                {{ displayUserName _id}} <span style="{font-size: 9px}">
                                 <i class="fa fa-circle"
                                    style=" {color: {{#if isUserOnline _id}} green {{else}} lightgrey {{/if}} }">
                                 </i></span>
+                                <span class="badge inactive-chatroom-with-messages-badge">{{inactiveChatMessagesCount _id}}</span>
                             </div>
                         </a>
                     </div>
