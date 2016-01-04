@@ -58,15 +58,19 @@
 
 <!-- display an individual user -->
 <template name="available_user">
-	<div class="col-md-2">
-		<div class="user_avatar">
+	<div class="col-md-2 col-sm-3 col-xs-4">
+		<div class="user_avatar" style="{width: 80px; margin-bottom: 10px}">
 			{{#if isMyUser _id}} 
 			<div >
+
                 {{> avatar user=this size="large" shape="circle" }}
+                You: {{getUsername _id}}
 			</div>
 			{{else}}
-			<a href="/chat/{{_id}}">
+			<a style="{font-weight: bold}" href="/chat/{{_id}}">
+
                 {{> avatar user=this size="large" shape="circle" }}
+                {{getUsername _id}}
 			</a>
 			{{/if}}
 		</div>
