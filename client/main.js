@@ -4,6 +4,9 @@ Avatar.setOptions({
         'mySize': 50,
         'extra-small': 32
     },
+    backgroundColor: "#d4d3d4",
+    txtColor: "#033C6D",
+
     customImageProperty: function(){
         var user = this;
 
@@ -141,7 +144,7 @@ Template.chat_message.helpers({
         {
             return user._id != currentUser._id;
         }
-        return null;
+        return true;
     },
 
 })

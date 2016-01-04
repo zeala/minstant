@@ -1,5 +1,6 @@
 Router.configure({
-    layoutTemplate: 'ApplicationLayout'
+    layoutTemplate: 'ApplicationLayout',
+    loadingTemplate: 'loading'
 });
 // specify the top level route, the page users see when they arrive at the site
 Router.route('/', function () {

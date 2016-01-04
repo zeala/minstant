@@ -1,5 +1,40 @@
+html{
+    height: 100%
+}
+
 body{
-    background-color: lightsteelblue;
+    background-color: #d8d8d8;
+    height: 100%;
+    margin: 0;
+}
+
+.background-div{
+    height: 100%;
+    position: relative;
+   /* background: url('http://lorempixel.com/g/1920/1200/abstract/8/');*/
+    /*background: url('http://lorempixel.com/g/1920/1200/abstract/2/');*/
+    background: url('http://lorempixel.com/g/1920/1200/abstract/1/');
+
+    opacity: 0.25;
+}
+
+@media screen {
+
+    /* start of screen rules. */
+
+    /* Generic pane rules */
+    body { margin: 0 }
+    .custom-row, .customm-col { overflow: hidden; position: absolute; }
+    .custom-row { left: 0; right: 0; }
+    .customm-col { top: 0; bottom: 0; }
+    .scroll-x { overflow-x: auto; }
+    .scroll-y { overflow-y: auto; }
+
+    .header.custom-row { height: 75px; top: 0; }
+    .body.custom-row { top: 55px; bottom: 50px; }
+    .footer.custom-row { height: 50px; bottom: 0; }
+
+    /* end of screen rules. */
 }
 
 .navbar{
@@ -43,13 +78,26 @@ body{
     padding-left: 0 !important;
 }
 
+.left-panel-title-row{
+    background-color: lightsteelblue;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    padding-left: 5px;
+    border-radius: 6px;
+}
+
 .all-users-left-panel{
-    -webkit-padding-start: 15px !important;
-    -moz-padding-start: 15px;
+    -webkit-padding-start: 4px !important;
+    -moz-padding-start: 4px;
+    padding-left: 5px;
 
 }
 .avatar-div-left-panel{
     width: 50px;
+}
+
+.avatar-initials{
+    color: #09579A !important;
 }
 
 .second-user-left-panel{
@@ -70,22 +118,29 @@ body{
     background-color: #337ab7;
 }
 
+#textAreaNewChat{
+    margin-bottom: 6px;
+}
+
 .left-panel{
     width: 240px;
     float: left;
     margin-right: 10px;
+    height: 100%
 }
 
 .main-panel{
     float: left;
     width: auto;
     margin-left: 10px;
+    height: 100%
 }
 
 .all-users-list-item{
-    padding-top: 5px;
+    padding: 5px;
     padding-bottom: 5px;
 }
+
 
 .bubble2 {
     background-color: #cfe4fe;
