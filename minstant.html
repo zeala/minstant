@@ -87,7 +87,7 @@
 
         <div class="well main-panel" style="{margin-bottom: 0; background-color: #d8d8d8;}">
             <div>
-                <div id="chatContainer" class="well row well-lg all-messages " style="{height: 100%; margin-left: -10px}">
+                <div id="chatContainer" class="well row well-lg all-messages " style="{height: 100%; margin-left: -10px; min-width: 500px}">
                     <p class="chatContent">
                         {{#each chat_messages}}
                         {{> chat_message}}
@@ -96,31 +96,35 @@
 
                 </div>
             </div>
-            <div  >
-                {{#if currentUser}}
-                    <form class="js-send-chat col-xs-12" id="submitChatForm">
-                        <div class="well row col-xs-12" style="{width: 500px; margin-left: -10px}">
-                            <div >
+            <div class="{{#if currentUser }}{{else}}disabled-form{{/if}}" >
+                <form class="js-send-chat col-xs-12"
+
+                      id="submitChatForm">
+                    <div class="well row col-xs-12" style="{width: 500px; margin-left: -10px}">
+                        <div >
                                 <textarea id="textAreaNewChat" class="form-control custom-control"
                                           name="chat"
                                           placeholder="Enter your message..."
                                           rows="3"
                                           style="{float: left; resize: none}"
                                         ></textarea>
-                            </div>
-                            <div style="{width: 205px; float: left}">
-                                {{> emoticons callback=selectEmoticonCallback}}
-                            </div>
-                            <br/>
-                            <div>
-
-                                <button type="submit" class="btn btn-default submit-chat-btn">send</button>
-                            </div>
                         </div>
-                    </form>
-                {{else}}
-                    <h5>Please login to post chat messages</h5>
-                {{/if}}
+                        {{#if currentUser}}
+
+                        {{else}}
+                            <h5>Please login to post chat messages</h5>
+                        {{/if}}
+
+                        <div style="{width: 205px; float: left}">
+                            {{> emoticons callback=selectEmoticonCallback}}
+                        </div>
+                        <br/>
+                        <div>
+
+                            <button type="submit" class="btn btn-default submit-chat-btn">send</button>
+                        </div>
+                    </div>
+                </form>
 
             </div>
         </div>
