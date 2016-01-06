@@ -19,17 +19,26 @@ Avatar.setOptions({
 });
 
 Meteor.publish("chats", function(){
-    console.log("publish chats")
-    return Chats.find();
+   /* var filter = {$or:[
+        {user1Id:Meteor.userId(), user2Id:userId},
+        {user2Id:Meteor.userId(), user1Id:userId}
+    ]};*/
+    var filter = {$or:[
+        {user1Id:this.userId},
+        {user2Id:this.userId}
+    ]};
+    return Chats.find(filter);
 });
 
 Meteor.publish("singleChat", function(chatId){
-    return Chats.find({_id: chatId});
+    var filter = {$or:[
+        {user1Id:this.userId},
+        {user2Id:this.userId}
+    ]};
+    return Chats.find({_id: chatId}, filter);
 })
 
 Meteor.publish("users", function(){
-    console.log("PUBLISHING METEOR USERS");
-    console.log(Meteor.users.find());
     return Meteor.users.find();
 });
 Meteor.publish("userStatus", function() {

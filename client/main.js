@@ -86,6 +86,7 @@ Template.chat_page.created = function(){
 
 Template.chat_page.helpers({
     chat_messages:function(){
+        console.log(" GET CHAT MESSAGES" );
         var sessionChatId = Session.get("chatId");
         var chat = Chats.findOne({_id:Session.get("chatId")});
         var msgs = chat.messages;//messages.get();
@@ -123,6 +124,17 @@ Template.chat_message.helpers({
     user: function(){
         var chatMessage = Template.currentData();
         var user = Meteor.users.findOne({"_id":chatMessage.userId});
+        var firstNode = $(Template.instance().firstNode);
+        if (firstNode){
+            var span = firstNode.find(".chat-message-wrapper");
+            if (span){
+                //NB: this is important , as it replaces the loose text that is left in the inner html
+                //when the temlates are rewired.
+
+                //TODO[EM] move to a different location;
+                span.text(this.text);
+            }
+        }
         return user;
     },
 

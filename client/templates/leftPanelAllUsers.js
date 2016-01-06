@@ -26,8 +26,6 @@ Template.all_users.helpers({
     },
 
     myUser:function(){
-        console.log("My user : ");
-        console.log(Meteor.user());
         return Meteor.user()
     },
 
@@ -95,17 +93,12 @@ Template.all_users.helpers({
 
     isInactiveWithMessages: function(userId){
         var messages = getInactiveChatMessages(userId);
-
-        console.log("IS INACTIVE WITH MESSAGES ");
-        console.log(messages);
         return messages && messages && messages.length > 0;
     }
 });
 
 Template.all_users.events({
     'click .js-chatroom-visits' : function(event){
-        console.log(Template.instance().chatroomVisits)
-        console.log("SEssion.chatId : " + Session.get("chatId"));
         var leftChatId = Session.get("chatId");
 
         var dict = Template.instance().chatroomVisits;
@@ -116,7 +109,14 @@ Template.all_users.events({
         chatToUpdate.timeLeft = new Date();
         Template.instance().chatroomVisits[leftChatId] = chatToUpdate;
 
+       /* setTimeout(function(){
+            var newChatId = Session.get("chatId");
+            Router.go('/chat/' + newChatId)
+        }, 200);
+*/
         setTimeout(function(){
+
+
             var newChatId = Session.get("chatId");
 
             if (dict[newChatId] == undefined){
@@ -127,16 +127,12 @@ Template.all_users.events({
             console.log(Template.instance())
             dict[newChatId] = chatToUpdate
         }, 100);
-
-        console.log("updated reactive dict : ");
-        console.log(Template.instance().chatroomVisits);
     }
 });
 
 
 function getInactiveChatMessages(userId){
     var chatUpdated = Session.get("chatUpdated");
-    console.log("chat updated " + chatUpdated);
     var filter = {$or:[
         {user1Id:Meteor.userId(), user2Id:userId},
         {user2Id:Meteor.userId(), user1Id:userId}
