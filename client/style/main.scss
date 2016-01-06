@@ -1,20 +1,22 @@
+@import 'css/bubbles';
+
+$full-height: 100%;
+$zero-margin: 0;
+
 html{
-    height: 100%
+    height: $full-height
 }
 
 body{
     background-color: #d8d8d8;
-    height: 100%;
-    margin: 0;
+    height: $full-height;
+    margin: $zero-margin;
 }
 
 .background-div{
-    height: 100%;
+    height: $full-height;
     position: relative;
-   /* background: url('http://lorempixel.com/g/1920/1200/abstract/8/');*/
-    /*background: url('http://lorempixel.com/g/1920/1200/abstract/2/');*/
     background: url('http://lorempixel.com/g/1920/1200/abstract/1/');
-
     opacity: 0.25;
 }
 
@@ -94,8 +96,6 @@ body{
     color: #09579A !important;
 }
 
-
-
 .inactive-chatroom-with-chat-messages{
     background: #FFF8C8;
     border-radius: 5px;
@@ -115,14 +115,14 @@ body{
     width: 240px;
     float: left;
     margin-right: 10px;
-    height: 100%
+    height: $full-height;
 }
 
 .main-panel{
     float: left;
     width: auto;
     margin-left: 10px;
-    height: 100%
+    height: $full-height;
 }
 
 .all-users-list-item{
@@ -158,71 +158,4 @@ body{
 .disabled-form{
     pointer-events: none;
     opacity: 0.5;
-}
-
-.bubble2 {
-    background-color: #cfe4fe;
-    background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    background-image:    -moz-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    background-image:     -ms-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    background-image:      -o-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    background-image:         linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    border-radius: 5px;
-    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.5),
-    3px 3px 0 hsla(0,0%,0%,.1);
-    color: #333;
-    display: inline-block;
-    font: 16px/25px sans-serif;
-    padding: 15px 25px;
-    position: relative;
-    text-shadow: 0 1px 1px hsla(0,0%,100%,.5);
-    max-width: 350px;
-    margin: 2px 0;
-}
-.bubble2:after, .bubble2:before {
-    border-bottom: 15px solid transparent;
-    border-left: 25px solid #cfe4fe;
-    bottom: -15px;
-    content: '';
-    position: absolute;
-    left: 22px;
-}
-.bubble2:before {
-    border-left: 15px solid hsla(0,0%,0%,.1);
-    bottom: -18px;
-    left: 24px;
-}
-
-
-.bubble {
-    background-color: #FFF0A0;
-    background-image: -webkit-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    background-image:    -moz-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    background-image:     -ms-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    background-image:      -o-linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    background-image:         linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
-    border-radius: 5px;
-    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.5),
-    3px 3px 0 hsla(0,0%,0%,.1);
-    color: #333;
-    display: inline-block;
-    font: 16px/25px sans-serif;
-    padding: 15px 25px;
-    position: relative;
-    text-shadow: 0 1px 1px hsla(0,0%,100%,.5);
-    max-width: 350px;
-    margin: 2px 0;
-}
-.bubble:after, .bubble:before {
-    border-bottom: 15px solid transparent;
-    border-right: 25px solid #fff0a0;
-    bottom: -15px;
-    content: '';
-    position: absolute;
-    right: 25px;
-}
-.bubble:before {
-    border-right: 15px solid hsla(0,0%,0%,.1);
-    bottom: -18px;
-    right: 22px;
 }

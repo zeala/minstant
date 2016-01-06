@@ -1,0 +1,60 @@
+$bubble-padding: 15px;
+
+.bubble2 {
+    background-color: #cfe4fe;
+    background-image:linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.5),
+    3px 3px 0 hsla(0,0%,0%,.1);
+    color: #333;
+    display: inline-block;
+    font: 16px/25px sans-serif;
+    padding: $bubble-padding 25px;
+    position: relative;
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.5);
+    max-width: 350px;
+    margin: 2px 0;
+}
+.bubble2:after, .bubble2:before {
+    border-bottom: $bubble-padding solid transparent;
+    border-left: 25px solid #cfe4fe;
+    bottom: -$bubble-padding;
+    content: '';
+    position: absolute;
+    left: 22px;
+}
+.bubble2:before {
+    border-left: $bubble-padding solid hsla(0,0%,0%,.1);
+    bottom: -18px;
+    left: 24px;
+}
+
+
+.bubble {
+    background-color: #FFF0A0;
+    background-image: linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
+    border-radius: 5px;
+    box-shadow: inset 0 1px 1px hsla(0,0%,100%,.5),
+    3px 3px 0 hsla(0,0%,0%,.1);
+    color: #333;
+    display: inline-block;
+    font: 16px/25px sans-serif;
+    padding: $bubble-padding 25px;
+    position: relative;
+    text-shadow: 0 1px 1px hsla(0,0%,100%,.5);
+    max-width: 350px;
+    margin: 2px 0;
+}
+.bubble:after, .bubble:before {
+    border-bottom: $bubble-padding solid transparent;
+    border-right: 25px solid #fff0a0;
+    bottom: - $bubble-padding;
+    content: '';
+    position: absolute;
+    right: 25px;
+}
+.bubble:before {
+    border-right: $bubble-padding solid hsla(0,0%,0%,.1);
+    bottom: -18px;
+    right: 22px;
+}
