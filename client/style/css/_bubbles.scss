@@ -31,7 +31,7 @@ $bubble-padding: 15px;
 
 
 .bubble {
-    background-color: #FFF0A0;
+    background-color: #fbf5ce;
     background-image: linear-gradient(top, hsla(0,0%,100%,.5), hsla(0,0%,100%,0));
     border-radius: 5px;
     box-shadow: inset 0 1px 1px hsla(0,0%,100%,.5),
@@ -47,7 +47,7 @@ $bubble-padding: 15px;
 }
 .bubble:after, .bubble:before {
     border-bottom: $bubble-padding solid transparent;
-    border-right: 25px solid #fff0a0;
+    border-right: 25px solid #fbf5ce;
     bottom: - 12px;
     content: '';
     position: absolute;

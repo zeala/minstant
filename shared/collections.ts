@@ -1,10 +1,11 @@
 /// <reference path="../typings/meteor/meteor.d.ts" />
 interface IChats{
     _id?: string;
-    name: string;
-    status?: string;
-    queuedAt?: string;
+    user1Id:string;
+    user2Id:string;
+    name?: string;
     messages?:Array<Object>;
+    updated?:Date
 }
 
 interface IChatMessage{

@@ -82,14 +82,14 @@
 <!-- Top level template for the chat page -->
 <template name="chat_page">
 
-    <div  style="{background-color: rgba(28, 114, 187, 0.56); height:100%; padding:  15px}">
+    <div  style="{background-color: rgba(0, 0, 0, 0.5); height:100%; padding:  15px}">
 
         <div class="left-panel hidden-sm hidden-xs" >
                 {{> all_users }}
         </div>
 
 
-        <div class="well main-panel" style="{margin-bottom: 0; background-color: #d8d8d8;}">
+        <div class="well main-panel" style="{margin-bottom: 0; background-color: #d8d8d8; overflow-y: scroll}">
             <div>
                 <div id="chatContainer" class="well row well-lg all-messages " style="{height: 100%; margin-left: -10px; min-width: 500px}">
                     <p class="chatContent">
