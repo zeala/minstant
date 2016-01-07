@@ -18,15 +18,15 @@ $bubble-padding: 15px;
 .bubble2:after, .bubble2:before {
     border-bottom: $bubble-padding solid transparent;
     border-left: 25px solid #cfe4fe;
-    bottom: -$bubble-padding;
+    bottom: -13px;
     content: '';
     position: absolute;
-    left: 22px;
+    left: 12px;
 }
 .bubble2:before {
     border-left: $bubble-padding solid hsla(0,0%,0%,.1);
     bottom: -18px;
-    left: 24px;
+    left: 13px;
 }
 
 
@@ -48,13 +48,13 @@ $bubble-padding: 15px;
 .bubble:after, .bubble:before {
     border-bottom: $bubble-padding solid transparent;
     border-right: 25px solid #fff0a0;
-    bottom: - $bubble-padding;
+    bottom: - 12px;
     content: '';
     position: absolute;
-    right: 25px;
+    right: 12px;
 }
 .bubble:before {
     border-right: $bubble-padding solid hsla(0,0%,0%,.1);
     bottom: -18px;
-    right: 22px;
+    right: 11px;
 }
