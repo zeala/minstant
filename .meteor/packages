@@ -32,3 +32,5 @@ sacha:spin
 fourseven:scss
 francocatena:compass
 meteortypescript:typescript-libs
+sanjo:jasmine
+velocity:html-reporter

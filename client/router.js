@@ -29,7 +29,8 @@ Router.route('/chat/:_id', function () {
     ]};
 
     var chat = Chats.findOne(filter);
-    console.log("found chat : ")
+    console.log("found chat : for user1 : " + Meteor.userId() + " and user 2 : " + otherUserId)
+    console.log(chat);
     //console.log(chat)
     if (!chat){// no chat matching the filter - need to insert a new one
         chatId = Meteor.call("createNewChatId",this.params._id, function(error, result){
@@ -43,8 +44,11 @@ Router.route('/chat/:_id', function () {
     else {// there is a chat going already - use that.
         chatId = chat._id;
         Session.set("chatId",chatId);
-        //messages.set(chat.messages);
-        setTimeout(emoticonize, 300);
+        if (chat.messages && chat.messages.length > 0){
+            //messages.set(chat.messages);
+            setTimeout(emoticonize, 300);
+        }
+
     }
 
     this.render("navbar", {to:"header"});

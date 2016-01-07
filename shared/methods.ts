@@ -14,6 +14,7 @@ Meteor.methods({
     createNewChatId: function(secondId:string):string{
         var chat:IChats = {user1Id:Meteor.userId(), user2Id:secondId};
         var chatId:string = Chats.insert(chat);
+        console.log("Server methods : creating new chat id : " + chatId)
         return chatId;
     },
 });
