@@ -34,4 +34,6 @@ francocatena:compass
 meteortypescript:typescript-libs
 sanjo:jasmine
 velocity:console-reporter
-velocity:html-reporter
+babrahams:editable-text
+aldeed:collection2
+aldeed:autoform

@@ -28,13 +28,7 @@ Router.route('/chat/:_id', function () {
     var chatId:string = chat ? chat._id : undefined;
 
     if (!chat){// no chat matching the filter - need to insert a new one
-        chatId = Meteor.call("createNewChatId",this.params._id, function(error, result){
-            if (error){
-                console.log(error);
-                return;
-            }
-        } );
-
+        chatId = Meteor.call("createNewChatId",this.params._id)
     }
     else {// there is a chat going already - use that.
         chatId = chat._id;
@@ -47,6 +41,8 @@ Router.route('/chat/:_id', function () {
     this.render("navbar", {to:"header"});
     this.render("chat_page", {to:"main"});
 });
+
+
 
 function emoticonize(){
     $('.chat-message-wrapper').emoticonize({delay: 300});

@@ -1,4 +1,4 @@
-///<reference path="../.././typings/meteor/meteor.d.ts" />
+///<reference path="../../../typings/meteor/meteor.d.ts" />
 
 Template['emoticons'].events({
     'click .css-emoticon': function(event) {
