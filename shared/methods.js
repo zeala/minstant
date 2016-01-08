@@ -3,7 +3,7 @@
 /// <reference path="../shared/ChatService.ts" />
 Meteor.methods({
     addChatMessage: function (messages, currentChatId) {
-        return chatService.updateChatMessages( messages, currentChatId);
+        return chatService.updateChatMessages(messages, currentChatId);
     },
     createNewChatId: function (secondId) {
         return chatService.createNewChatId(secondId);

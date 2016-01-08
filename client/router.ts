@@ -1,3 +1,9 @@
+/// <reference path="../typings/meteor/meteor.d.ts" />
+/// <reference path="../typings/jquery.d.ts" />
+/// <reference path="../typings/ironrouter.d.ts" />
+/// <reference path="../shared/collections.ts" />
+/// <reference path="../shared/ChatService.ts" />
+
 Router.configure({
     layoutTemplate: 'ApplicationLayout',
     loadingTemplate: 'loading'
@@ -17,21 +23,10 @@ Router.route('/chat/:_id', function () {
         return;
     }
 
+    var otherUserId:string = this.params._id;
+    var chat:IChats = chatService.findChatByUserId(otherUserId);
+    var chatId:string = chat ? chat._id : undefined;
 
-    // the user they want to chat to has id equal to
-    // the id sent in after /chat/...var chats = Chats.find({$or:[{ user1Id: userId}, {user2Id: userId }]}).fetch();
-    var otherUserId = this.params._id;
-    // find a chat that has two users that match current user id
-    // and the requested user id
-    var filter = {$or:[
-        {user1Id:Meteor.userId(), user2Id:otherUserId},
-        {user2Id:Meteor.userId(), user1Id:otherUserId}
-    ]};
-
-    var chat = Chats.findOne(filter);
-    console.log("found chat : for user1 : " + Meteor.userId() + " and user 2 : " + otherUserId)
-    console.log(chat);
-    //console.log(chat)
     if (!chat){// no chat matching the filter - need to insert a new one
         chatId = Meteor.call("createNewChatId",this.params._id, function(error, result){
             if (error){
@@ -45,15 +40,12 @@ Router.route('/chat/:_id', function () {
         chatId = chat._id;
         Session.set("chatId",chatId);
         if (chat.messages && chat.messages.length > 0){
-            //messages.set(chat.messages);
             setTimeout(emoticonize, 300);
         }
-
     }
 
     this.render("navbar", {to:"header"});
     this.render("chat_page", {to:"main"});
-    //this.render("all_users", {to:"left"});
 });
 
 function emoticonize(){

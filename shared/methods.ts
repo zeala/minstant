@@ -4,7 +4,7 @@
 
 Meteor.methods({
     addChatMessage: function (messages:IChatMessage[], currentChatId:string):Array<Object> {
-        return chatService.updateChatMessages(currentChatId, messages);
+        return chatService.updateChatMessages(messages, currentChatId);
     },
 
     createNewChatId: function(secondId:string):string{
