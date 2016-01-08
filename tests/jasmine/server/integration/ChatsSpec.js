@@ -1,5 +1,16 @@
 describe('Collection: Chats', function(){
 
+    it('a chat doesnt exist for the user - undefined', function(){
+
+        var testId = "testId";
+        var testChat = Chats.findOne({user2Id: testId});
+        if (testChat){
+            Chats.remove({_id:testChat._id})
+        }
+
+        expect(Chats.findOne({user2Id: testId})).toBeUndefined();
+    });
+
    it('some chats are available in the collection', function(){
 
        var testChat = Chats.findOne();
@@ -13,14 +24,5 @@ describe('Collection: Chats', function(){
 
    });
 
-    it('a chat doesnt exist for the user - undefined', function(){
 
-        var testId = "testId";
-        var testChat = Chats.findOne({user2Id: testId});
-        if (testChat){
-            Chats.remove({_id:testChat._id})
-        }
-
-        expect(Chats.findOne({user2Id: testId})).toBeUndefined();
-    })
 });
