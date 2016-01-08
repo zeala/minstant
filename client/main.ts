@@ -1,6 +1,7 @@
 /// <reference path="../typings/meteor/meteor.d.ts" />
 /// <reference path="../typings/jquery.d.ts" />
 /// <reference path="../shared/collections.ts" />
+/// <reference path="../shared/ChatService.ts" />
 
 Meteor.startup(function(){
     Session.set("data_loaded", false);
@@ -67,14 +68,7 @@ Template['chat_page'].created = function(){
 
 Template['chat_page'].helpers({
     chat_messages:function(){
-        console.log(" GET CHAT MESSAGES" );
-        var sessionChatId = Session.get("chatId");
-        var chat = Chats.findOne({_id:Session.get("chatId")});
-        var msgs = chat.messages;
-        console.log("\n get chat messages: ");
-        console.log(msgs);
-        return msgs;
-
+        return chatService.findSessionChatMessages();
     },
     other_user:function(){
         return ""
@@ -164,26 +158,18 @@ Template['chat_page'].events({
 
 
 function sendChat(event){
-    var chat = Chats.findOne({_id:Session.get("chatId")});
-    if (chat) {// ok - we have a chat to use
-        var msgs = chat.messages; // pull the messages property
+    var msgs = chatService.findSessionChatMessages(); // pull the messages property
+    var messageTxt = $('#textAreaNewChat').val();
+    msgs.push({text: messageTxt, userId: Meteor.userId(), timestamp: new Date()});
+    // reset the form
+    $('#textAreaNewChat').val("");
 
-        if (!msgs) {// no messages yet, create a new array
-            msgs = [];
-            console.log(" no chat messages yet")
-        }
-        var messageTxt = $('#textAreaNewChat').val();
-        msgs.push({text: messageTxt, userId: Meteor.userId(), timestamp: new Date()});
-        // reset the form
-        $('#textAreaNewChat').val("");
+    Meteor.call("addChatMessage", msgs, Session.get("chatId"), function(error, result){
+    });
 
-        Meteor.call("addChatMessage", msgs, Session.get("chatId"), function(error, result){
-        });
-
-        setTimeout(emoticonize, 100);
-        chat.messages = msgs;
-        Session.set("chatUpdated", chat._id);
-    }
+    setTimeout(emoticonize, 100);
+    chatService.updateChatMessages(msgs);
+    Session.set("chatUpdated", chatService.getSessionChatId());
 }
 
 function emoticonize(){
