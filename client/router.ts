@@ -12,14 +12,14 @@ Router.configure({
 Router.route('/', function () {
     console.log("rendering root /");
     this.render("navbar", {to:"header"});
-    this.render("lobby_page", {to:"main"});
-    this.render("", {to:"fullPage"});
+    //this.render("lobby_page", {to:"main"});
+    this.render("lobby_page", {to:"fullPage"});
 });
 
 Router.route("/editor", function(){
     this.render("navbar", {to:"header"});
     this.render("editorContainer", {to: "fullPage"});
-    this.render("", {to:"main"});
+    //this.render("", {to:"main"});
 });
 
 Router.route('/documents', function(){
@@ -32,7 +32,8 @@ Router.route('/documents/:_id', function(){
     console.log("you hit documents " + this.params._id);
     Session.set("docid", this.params._id);
     this.render("navbar", {to: "header"});
-    this.render("docItem", {to: "main"});
+    //this.render("docItem", {to: "main"});
+    this.render("docItem", {to: "fullPage"});
 });
 
 
@@ -60,8 +61,9 @@ Router.route('/chat/:_id', function () {
     }
 
     this.render("navbar", {to:"header"});
-    this.render("chat_page", {to:"main"});
-    this.render("", {to:"fullPage"});
+    //this.render("chat_page", {to:"main"});
+    //this.render("", {to:"fullPage"});
+    this.render("chat_page", {to: "fullPage"});
 });
 
 

@@ -2,11 +2,14 @@
 
 interface IEditingUser{
     _id?: string;
-    users?: Array<Object>
+    users?: {}
 }
 
 interface IDocuments{
     _id?:string;
+    isPrivate?:boolean;
+    owner?:string;
+    createdOn?:Date;
 }
 
 declare var EditingUsers:Mongo.Collection<IEditingUser>

@@ -52,12 +52,14 @@
 
 <!-- display a list of users -->
 <template name="available_user_list">
-	<h2>Choose someone to chat with:</h2>
-	<div class="row">
-	{{#each users}}
-	{{> available_user}}
-	{{/each}}
-</div>
+    <div class="container">
+        <h2>Choose someone to chat with:</h2>
+        <div class="row">
+            {{#each users}}
+            {{> available_user}}
+            {{/each}}
+        </div>
+    </div>
 </template>
 
 <!-- display an individual user -->
@@ -85,7 +87,7 @@
 <!-- Top level template for the chat page -->
 <template name="chat_page">
 
-    <div  style="{background-color: rgba(0, 0, 0, 0.5); height:100%; padding:  15px}">
+    <div  class="container" style="{background-color: rgba(0, 0, 0, 0.5); height:100%; padding:  15px}">
 
         <div class="left-panel hidden-sm hidden-xs" >
                 {{> all_users }}

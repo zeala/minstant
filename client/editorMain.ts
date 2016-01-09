@@ -109,7 +109,7 @@ Template['docMeta'].events({
     "click .js-tog-private": function(event){
         console.log(event.target.checked);
 
-        var doc = {_id: Session.get("docid"), isPrivate: event.target.checked};
+        var doc:IDocuments = {_id: Session.get("docid"), isPrivate: event.target.checked};
         Meteor.call("updateDocPrivacy", doc);
     }
 });
