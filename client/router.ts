@@ -13,7 +13,14 @@ Router.route('/', function () {
     console.log("rendering root /");
     this.render("navbar", {to:"header"});
     this.render("lobby_page", {to:"main"});
+    this.render("", {to:"fullPage"});
 });
+
+Router.route("/editor", function(){
+    this.render("navbar", {to:"header"});
+    this.render("editor", {to: "fullPage"});
+    this.render("", {to:"main"});
+})
 
 // specify a route that allows the current user to chat to another users
 Router.route('/chat/:_id', function () {
@@ -40,6 +47,7 @@ Router.route('/chat/:_id', function () {
 
     this.render("navbar", {to:"header"});
     this.render("chat_page", {to:"main"});
+    this.render("", {to:"fullPage"});
 });
 
 

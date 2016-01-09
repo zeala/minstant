@@ -6,9 +6,7 @@
             </div>
             <div class="col-xs-9">
                 {{ displayUserName myUser._id}}
-                <span><i class="fa fa-circle"
-                   style=" {color: {{#if isUserOnline myUser._id}} green {{else}} lightgrey {{/if}} }">
-                </i></span>
+                <span><img src="{{#if isUserOnline myUser._id}}/online_status.png{{else}}/offline_status.png{{/if}}"></span>
             </div>
         </div>
         <br/>
@@ -22,10 +20,9 @@
                                 {{> avatar user=this size="extra-small" shape="circle" }}
                             </div>
                             <div class="col-xs-10">
-                                {{ displayUserName _id}} <span style="{font-size: 9px}">
-                                <i class="fa fa-circle"
-                                   style=" {color: {{#if isUserOnline _id}} green {{else}} lightgrey {{/if}} }">
-                                </i></span>
+                                {{ displayUserName _id}}
+                                <img src="{{#if isUserOnline _id}}/online_status.png{{else}}/offline_status.png{{/if}}">
+
                                 <span class="badge inactive-chatroom-with-messages-badge">{{inactiveChatMessagesCount _id}}</span>
                             </div>
                         </a>

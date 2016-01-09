@@ -61,6 +61,7 @@ jparker:crypto-core@0.1.0
 jparker:crypto-md5@0.1.1
 jparker:gravatar@0.3.1
 jquery@1.11.4
+jquery-layout@1.0.3
 lai:collection-extensions@0.1.4
 launch-screen@1.0.4
 livedata@1.0.15
@@ -74,6 +75,8 @@ meteorhacks:inject-initial@1.0.3
 meteortypescript:typescript-libs@1.2.8
 minifiers@1.1.7
 minimongo@1.0.10
+mizzao:build-fetcher@0.2.0
+mizzao:jquery-ui@1.11.4
 mizzao:timesync@0.3.4
 mizzao:user-status@0.6.6
 mobile-experience@1.0.1

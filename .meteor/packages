@@ -37,3 +37,5 @@ velocity:console-reporter
 babrahams:editable-text
 aldeed:collection2
 aldeed:autoform
+mizzao:jquery-ui
+jquery-layout

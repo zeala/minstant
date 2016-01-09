@@ -22,6 +22,10 @@
 
 	</div>
 
+    <div class="body custom-row scroll-y" >
+        {{>yield "fullPage"}}
+    </div>
+
 </template>
 
 <!-- top level template for the nav bar -->
@@ -62,7 +66,6 @@
 		<div class="user_avatar" style="{width: 80px; margin-bottom: 10px}">
 			{{#if isMyUser _id}} 
 			<div >
-
                 {{> avatar user=this size="large" shape="circle" }}
                 You: {{getUsername _id}}
 			</div>
