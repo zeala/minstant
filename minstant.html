@@ -26,22 +26,26 @@
         {{>yield "fullPage"}}
     </div>
 
+    {{> yield "footer"}}
+
 </template>
 
 <!-- top level template for the nav bar -->
 <template name="navbar">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">
-        Minstant!
-      </a>
-    </div>
-    <div class="nav navbar-nav">
-    {{> loginButtons}}
-</div>
-  </div>
-</nav>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                  <a class="navbar-brand" href="/">
+                    Minstant!
+                  </a>
+                 <!-- <a href="/editor">Code Editor</a>-->
+                </div>
+
+            <div class="nav navbar-nav">
+            {{> loginButtons}}
+            </div>
+        </div>
+    </nav>
 </template>
 
 <!-- Top level template for the lobby page -->

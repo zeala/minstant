@@ -2,6 +2,7 @@
 @import 'css/editor';
 
 $full-height: 100%;
+$full_size: 100%;
 $zero-margin: 0;
 
 html{
@@ -12,13 +13,29 @@ body{
     background-color: #d8d8d8;
     height: $full-height;
     margin: $zero-margin;
+
 }
 
 .background-div{
     height: $full-height;
-    position: relative;
+    width: $full_size;
+    position: fixed;
+    top: 0;
     background: url('http://lorempixel.com/g/1920/1200/abstract/1/');
     opacity: 0.25;
+}
+
+#footer {
+    padding: 5px;
+    height: 30px;
+    min-height: 30px !important;
+    bottom: 0;
+    position: fixed;
+}
+
+.footerSignature{
+    font-family: "Monotype Corsiva", "Apple Chancery", cursive;
+    font-size: 16px;
 }
 
 @media screen {
@@ -34,7 +51,7 @@ body{
     .scroll-y { overflow-y: auto; }
 
     .header.custom-row { height: 75px; top: 0; }
-    .body.custom-row { top: 52px; bottom: 50px; }
+    .body.custom-row { top: 60px; bottom: 50px; }
     .footer.custom-row { height: 50px; bottom: 0; }
 
     /* end of screen rules. */

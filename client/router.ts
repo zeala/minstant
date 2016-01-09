@@ -14,6 +14,7 @@ Router.route('/', function () {
     this.render("navbar", {to:"header"});
     //this.render("lobby_page", {to:"main"});
     this.render("lobby_page", {to:"fullPage"});
+    this.render("footer", {to:"footer"});
 });
 
 Router.route("/editor", function(){
