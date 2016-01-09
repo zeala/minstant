@@ -1,3 +1,46 @@
+/*
+  //semi transparent background:
+   background: rgba(255, 255, 255, 0.5) !important;
+
+   height: 100%
+*/
+
 .ui-layout-container{
   height: 100% !important;
 }
+
+.shareJSCM{
+  height: 100% !important;
+}
+
+.CodeMirror{
+  height: 100%;
+}
+
+.top-margin{
+  margin-top: 50px;
+}
+
+#viewer_iframe{
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  resize:both;
+}
+
+.light-border{
+  border:1px solid gray;
+  width: 100%;
+  border-radius: 3px;
+}
+
+.ui-layout-pane-north,
+.ui-layout-pane-west{
+
+  background: rgba(255, 255, 255, 0.5) !important;
+}
+
+.ui-layout-pane-east{
+  background: rgba(255, 255, 255, 0.9) !important;
+}
+

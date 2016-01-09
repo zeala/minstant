@@ -18,9 +18,23 @@ Router.route('/', function () {
 
 Router.route("/editor", function(){
     this.render("navbar", {to:"header"});
-    this.render("editor", {to: "fullPage"});
+    this.render("editorContainer", {to: "fullPage"});
     this.render("", {to:"main"});
-})
+});
+
+Router.route('/documents', function(){
+    console.log("you hit /");
+    this.render("navbar", {to: "header"});
+    this.render("docList", {to: "main"});
+});
+
+Router.route('/documents/:_id', function(){
+    console.log("you hit documents " + this.params._id);
+    Session.set("docid", this.params._id);
+    this.render("navbar", {to: "header"});
+    this.render("docItem", {to: "main"});
+});
+
 
 // specify a route that allows the current user to chat to another users
 Router.route('/chat/:_id', function () {
