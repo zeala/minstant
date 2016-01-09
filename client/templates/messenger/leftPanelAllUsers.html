@@ -6,7 +6,8 @@
             </div>
             <div class="col-xs-9">
                 {{ displayUserName myUser._id}}
-                <span><img src="{{#if isUserOnline myUser._id}}/online_status.png{{else}}/offline_status.png{{/if}}"></span>
+                <span><img title="{{#if  isUserOnline myUser._id}}online {{else}}offline{{/if}}"
+                           src="{{#if isUserOnline myUser._id}}/online_status.png{{else}}/offline_status.png{{/if}}"></span>
             </div>
         </div>
         <br/>
@@ -21,7 +22,8 @@
                             </div>
                             <div class="col-xs-10">
                                 {{ displayUserName _id}}
-                                <img src="{{#if isUserOnline _id}}/online_status.png{{else}}/offline_status.png{{/if}}">
+                                <img src="{{#if isUserOnline _id}}/online_status.png{{else}}/offline_status.png{{/if}}"
+                                     title="{{#if isUserOnline _id}}online{{else}}offline{{/if}}">
 
                                 <span class="badge inactive-chatroom-with-messages-badge">{{inactiveChatMessagesCount _id}}</span>
                             </div>

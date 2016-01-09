@@ -1,9 +1,15 @@
+/// <reference path="../typings/meteor/meteor.d.ts" />
+/// <reference path="../typings/jquery.d.ts" />
+/// <reference path="../shared/collections.ts" />
+/// <reference path="../shared/editDocsCollections.ts" />
+/// <reference path="../shared/ChatService.ts" />
+
 Meteor.subscribe("documents");
 Meteor.subscribe("editingUsers");
 Meteor.subscribe("comments");
 
 
-Template.editor.helpers({
+Template['editor'].helpers({
     docid: function(){
         setupCurrentDocument();
         return Session.get("docid");
@@ -24,14 +30,15 @@ Template.editor.helpers({
     }
 });
 
-Template.editingUsers.helpers({
+
+Template['editingUsers'].helpers({
     users: function(){
         var users;
         var doc;
 
         doc = Documents.findOne({_id:Session.get("docid")});
         if (!doc){ return;}
-        eusers = EditingUsers.findOne({docid: doc._id});
+        var eusers = EditingUsers.findOne({docid: doc._id});
 
         if (!eusers){ return};
 
@@ -45,13 +52,13 @@ Template.editingUsers.helpers({
     }
 });
 
-Template.navbar.helpers({
+Template['navbar'].helpers({
     documents: function(){
         return Documents.find()
     }
 });
 
-Template.docMeta.helpers({
+Template['docMeta'].helpers({
     document:function(){
         return Documents.findOne({_id:Session.get("docid")})
     },
@@ -68,7 +75,7 @@ Template.docMeta.helpers({
     }
 });
 
-Template.editableText.helpers({
+Template['editableText'].helpers({
     userCanEdit: function(doc, Collection){
         doc = Documents.findOne({_id:Session.get("docid"), owner: Meteor.userId()});
         if (doc){
@@ -81,19 +88,15 @@ Template.editableText.helpers({
 });
 
 
-Template.docList.helpers({
+Template['docList'].helpers({
     documents: function(){
         return Documents.find()
     }
 });
 
-Template.commentList.helpers({
-    comments: function(){
-        return Comments.find({docid: Session.get("docid")})
-    }
-})
 
-Template.insertCommentForm.helpers({
+
+Template['insertCommentForm'].helpers({
     docid: function(){
         return Session.get("docid");
     }
@@ -102,7 +105,7 @@ Template.insertCommentForm.helpers({
 //-------------------------------------------------------//
 //                EVENTS
 //-------------------------------------------------------//
-Template.docMeta.events({
+Template['docMeta'].events({
     "click .js-tog-private": function(event){
         console.log(event.target.checked);
 
@@ -111,7 +114,7 @@ Template.docMeta.events({
     }
 });
 
-Template.navbar.events({
+Template['navbar'].events({
     "click .js-add-doc": function(event){
         event.preventDefault();
         console.log("add new doc");
@@ -151,7 +154,7 @@ function setupCurrentDocument(){
 function fixObjectKeys(obj){
     var newObj = {};
 
-    for (key in obj){
+    for (var key in obj){
         var key2 = key.replace("-", "");
         newObj[key2] = obj[key];
     }
