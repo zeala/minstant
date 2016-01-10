@@ -5,8 +5,6 @@ describe("Chat Service", function(){
      });
 
     afterEach(function () {
-        //MeteorStubs.uninstall();
-
         var user1Id = "user1Id"
         var user2Id = "user2Id";
         var filter = {$or:[
