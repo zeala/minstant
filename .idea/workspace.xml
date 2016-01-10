@@ -2,20 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37af1628-8345-4bd0-936d-f93b2b8010a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/footer.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/editor/listDocs.html" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/editor/listDocs.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shared/collections.js.map" afterPath="$PROJECT_DIR$/shared/collections.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shared/collections.js" afterPath="$PROJECT_DIR$/shared/collections.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shared/collections.ts" afterPath="$PROJECT_DIR$/shared/collections.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/shared/editDocsCollections.ts" afterPath="$PROJECT_DIR$/shared/editDocsCollections.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/templates/editor/editorContainer.html" afterPath="$PROJECT_DIR$/client/templates/editor/editorContainer.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/card1.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/card2.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/public/card3.jpg" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/dashboard/bootcard.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/dashboard/bootcard.ts" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/style/main.css.map" afterPath="$PROJECT_DIR$/client/style/main.css.map" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/style/main.scss" afterPath="$PROJECT_DIR$/client/style/main.scss" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/minstant.html" afterPath="$PROJECT_DIR$/minstant.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/packages" afterPath="$PROJECT_DIR$/.meteor/packages" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/router.ts" afterPath="$PROJECT_DIR$/client/router.ts" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.meteor/versions" afterPath="$PROJECT_DIR$/.meteor/versions" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="minstant.iws" />
@@ -47,14 +41,82 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="editorContainer.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="editorContainer.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/editor/editorContainer.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.3418647">
+            <state vertical-scroll-proportion="-7.1923075">
               <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
               <folding>
                 <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="minstant.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/minstant.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.6733467">
+              <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+              <folding>
+                <element signature="n#style#0;n#div#0;n#template#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#1;n#template#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#1;n#template#2;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#3;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#template#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#div#0;n#template#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#template#4;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#div#0;n#template#5;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootcard.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/dashboard/bootcard.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.576923">
+              <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+              <folding>
+                <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootcard.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/dashboard/bootcard.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="listDocs.ts" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/templates/editor/listDocs.ts">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="55" />
+              <folding>
+                <element signature="n#!!doc" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="main.scss" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/client/style/main.scss">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="-4.1538463">
+              <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -77,8 +139,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/shared/collections.js" />
-        <option value="$PROJECT_DIR$/client/templates/setOfEmoticons.ts" />
         <option value="$PROJECT_DIR$/client/templates/setOfEmoticons.js" />
         <option value="$PROJECT_DIR$/client/vendor.js" />
         <option value="$PROJECT_DIR$/client/style/css/_bubbles.scss" />
@@ -119,15 +179,17 @@
         <option value="$PROJECT_DIR$/typings/jquery-layout.d.ts" />
         <option value="$PROJECT_DIR$/client/templates/editor/editorContainer.ts" />
         <option value="$PROJECT_DIR$/client/router.ts" />
-        <option value="$PROJECT_DIR$/minstant.html" />
         <option value="$PROJECT_DIR$/client/templates/footer.html" />
-        <option value="$PROJECT_DIR$/client/style/main.scss" />
         <option value="$PROJECT_DIR$/shared/editDocsCollections.ts" />
         <option value="$PROJECT_DIR$/shared/collections.ts" />
         <option value="$PROJECT_DIR$/client/editorMain.js" />
         <option value="$PROJECT_DIR$/client/templates/editor/listDocs.ts" />
         <option value="$PROJECT_DIR$/client/templates/editor/listDocs.html" />
         <option value="$PROJECT_DIR$/client/templates/editor/editorContainer.html" />
+        <option value="$PROJECT_DIR$/client/style/main.scss" />
+        <option value="$PROJECT_DIR$/client/templates/dashboard/bootcard.ts" />
+        <option value="$PROJECT_DIR$/client/templates/dashboard/bootcard.html" />
+        <option value="$PROJECT_DIR$/minstant.html" />
       </list>
     </option>
   </component>
@@ -256,46 +318,6 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minstant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minstant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="templates" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="editor" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minstant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="minstant" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="client" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="style" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -350,11 +372,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Elena\Documents\My work 2015\Coursera\meteor\minstant\public" />
       <recent name="C:\Users\Elena\Documents\My work 2015\Coursera\meteor\minstant\client\templates" />
       <recent name="C:\Users\Elena\Documents\My work 2015\Coursera\meteor\minstant\client\style\theme" />
       <recent name="C:\Users\Elena\Documents\My work 2015\Coursera\meteor\minstant\client\style\css" />
       <recent name="C:\Users\Elena\Documents\My work 2015\Coursera\meteor\minstant\client\style" />
-      <recent name="C:\Users\Elena\Documents\My work 2015\Coursera\meteor\minstant\client\templates\editor" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\Elena\Documents\My work 2015\Coursera\meteor\minstant\client\vendorjs" />
@@ -428,18 +450,18 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1696" height="1036" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.2026538" sideWeight="0.49029127" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.24125452" sideWeight="0.49029127" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32743362" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23535912" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3561947" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.335177" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3561947" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25663716" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32632744" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.28539824" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.20353982" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24549098" sideWeight="0.50970876" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -488,27 +510,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/client/templates/messenger/loading.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="1" column="18" selection-start-line="1" selection-start-column="18" selection-end-line="1" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/minstant.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.2692308">
-          <caret line="5" column="12" selection-start-line="5" selection-start-column="12" selection-end-line="5" selection-end-column="12" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/.meteor/local/build/programs/server/assets/packages/meteortypescript_typescript-libs/definitions/meteor.d.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.564797">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.meteor/local/build/programs/server/assets/packages/meteortypescript_typescript-libs/definitions/smart-collections.d.ts">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -784,26 +785,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/minstant.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-3.4545455">
-          <caret line="15" column="10" selection-start-line="15" selection-start-column="10" selection-end-line="15" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#template#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#0;n#template#5;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#div#1;n#div#1;n#div#0;n#template#5;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/client/style/main.scss">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-2.7818182">
-          <caret line="24" column="18" selection-start-line="24" selection-start-column="18" selection-end-line="24" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/footer.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-0.65384614">
@@ -854,16 +835,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/client/templates/editor/listDocs.ts">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="10" column="18" selection-start-line="10" selection-start-column="18" selection-end-line="10" selection-end-column="18" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/editor/listDocs.html">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-1.3076923">
@@ -872,12 +843,75 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/editor/listDocs.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="2" selection-end-column="55" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/public/card3.jpg">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/style/main.scss">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.1538463">
+          <caret line="117" column="22" selection-start-line="117" selection-start-column="22" selection-end-line="117" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/dashboard/bootcard.ts">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="6" selection-start-line="7" selection-start-column="6" selection-end-line="7" selection-end-column="6" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/client/templates/editor/editorContainer.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.3418647">
+        <state vertical-scroll-proportion="-7.1923075">
           <caret line="11" column="25" selection-start-line="11" selection-start-column="25" selection-end-line="11" selection-end-column="25" />
           <folding>
             <element signature="n#style#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/client/templates/dashboard/bootcard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-4.576923">
+          <caret line="7" column="36" selection-start-line="7" selection-start-column="36" selection-end-line="7" selection-end-column="36" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#div#2;n#div#0;n#div#0;n#template#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/minstant.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.6733467">
+          <caret line="65" column="16" selection-start-line="65" selection-start-column="16" selection-end-line="65" selection-end-column="16" />
+          <folding>
+            <element signature="n#style#0;n#div#0;n#template#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#1;n#template#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#template#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#div#0;n#template#3;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#template#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#0;n#template#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#a#0;n#div#0;n#div#0;n#template#4;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#template#5;n#!!top" expanded="true" />
           </folding>
         </state>
       </provider>

@@ -1,0 +1,38 @@
+<template name="bootcard">
+    <div class="bootcard-panel-container">
+        <div class="panel panel-default bootcards-media">
+            <div class="panel-heading">
+                <h3 class="panel-title">{{this.title}}</h3>
+            </div>
+            <div class="panel-body">
+                {{this.description}}
+            </div>
+            <div style="{width: 350px; margin:auto; max-width: 350px; overflow: hidden}">
+                <img src={{imageLink}} class="img-responsive" style="{max-height: 220px; height: 220px; margin: auto}"/>
+            </div>
+
+            <div class="panel-footer">
+                <div class="btn-group btn-group-justified">
+                    <div class="btn-group">
+                        <button class="btn btn-default">
+                            <i class="fa fa-arrow-down"></i>
+                            Download
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default">
+                            <i class="fa fa-star"></i>
+                            Favorite
+                        </button>
+                    </div>
+                    <div class="btn-group">
+                        <button class="btn btn-default">
+                            <i class="fa fa-envelope"></i>
+                            Email
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</template>
