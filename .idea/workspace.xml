@@ -2,10 +2,21 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="37af1628-8345-4bd0-936d-f93b2b8010a6" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/websiteNav.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/style/main.css.map" afterPath="$PROJECT_DIR$/client/style/main.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/client/style/main.scss" afterPath="$PROJECT_DIR$/client/style/main.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/minstant.html" afterPath="$PROJECT_DIR$/minstant.html" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shared/ChatService.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shared/ChatService.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/dashboard/bootcard.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/dashboard/bootcard.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shared/editDocsCollections.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/shared/editDocsCollections.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/editor/editorContainer.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/editor/editorContainer.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/editorMain.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/editorMain.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/editor/listDocs.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/templates/editor/listDocs.js" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/style/main.css" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/router.js.map" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/client/router.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="minstant.iws" />
@@ -60,7 +71,7 @@
       <file leaf-file-name="websiteNav.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/client/templates/websiteNav.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.0">
+            <state vertical-scroll-proportion="0.0">
               <caret line="20" column="35" selection-start-line="20" selection-start-column="35" selection-end-line="20" selection-end-column="35" />
               <folding />
             </state>
@@ -197,8 +208,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scratches" />
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -307,6 +316,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -425,9 +436,9 @@
       <window_info id="TypeScript Compiler" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23432343" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3436464" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.50607735" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3127072" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.5116022" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24549098" sideWeight="0.50970876" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
