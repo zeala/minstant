@@ -109,11 +109,6 @@ Template.all_users.events({
         chatToUpdate.timeLeft = new Date();
         Template.instance().chatroomVisits[leftChatId] = chatToUpdate;
 
-       /* setTimeout(function(){
-            var newChatId = Session.get("chatId");
-            Router.go('/chat/' + newChatId)
-        }, 200);
-*/
         setTimeout(function(){
 
 

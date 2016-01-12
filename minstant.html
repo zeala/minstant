@@ -11,58 +11,101 @@
     <div class="background-div"></div>
 
 
-	<div style="{position:absolute; width: 100%; top: 0}" >
-        {{> yield "header"}}
-    </div>
-
-	
 	<div class="container body custom-row scroll-y "
          >
         {{> yield "main"}}
 
 	</div>
 
+    <div class="body custom-row scroll-y" >
+        {{>yield "fullPage"}}
+    </div>
+
+    {{> yield "footer"}}
+
+
+    <div style="{position:absolute; width: 100%; top: 0}" >
+        {{> yield "header"}}
+    </div>
+
 </template>
 
 <!-- top level template for the nav bar -->
 <template name="navbar">
-<nav class="navbar navbar-inverse">
-  <div class="container-fluid">
-    <div class="navbar-header">
-      <a class="navbar-brand" href="/">
-        Minstant!
-      </a>
-    </div>
-    <div class="nav navbar-nav">
-    {{> loginButtons}}
-</div>
-  </div>
-</nav>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                  <a class="navbar-brand" href="/">
+                    Minstant!
+                  </a>
+                 <!-- <a href="/editor">Code Editor</a>-->
+                </div>
+
+            <div class="nav navbar-nav">
+            {{> loginButtons}}
+            </div>
+        </div>
+    </nav>
 </template>
 
 <!-- Top level template for the lobby page -->
 <template name="lobby_page">
-	{{> available_user_list}}
+    <div  style="{background-color: rgba(255, 255, 255, 0.3); margin-top: 20px; margin-bottom: 20px}">
+        <div style="{max-width: 1100px; margin: auto}">
+            <div style="{margin:auto; display: table}">
+
+                {{> available_user_list}}
+            </div>
+        </div>
+
+    </div>
+    <div style="{background-color: rgba(255, 255, 255, 0.3)} ">
+        <div class="row" style="{margin:auto; display: table}">
+            {{>bootcard image="/card1.jpg"
+            title="Document Editor" description="Online collaborative document editor"}}
+
+            {{>bootcard image="/card2.jpg"
+                title="Instant Messenger" description="Instant messenger built with Typescript and Blaze"}}
+
+            {{>bootcard image="/card3.jpg" title="News and Links" description="More information and links"}}
+        </div>
+    </div>
+
+
 </template>
 
 
 <!-- display a list of users -->
 <template name="available_user_list">
-	<h2>Choose someone to chat with:</h2>
-	<div class="row">
-	{{#each users}}
-	{{> available_user}}
-	{{/each}}
-</div>
+    <div class="">
+        <h2>Registered Users:</h2>
+        <h4>Login and click on the avatar to chat</h4>
+        <div style="
+                border:  1px dashed grey;
+                border-radius:  10px;
+                background:  rgba(255,255,255, .3);
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-bottom: 10px;
+                max-width: 1080px;
+            ">
+            {{#each users}}
+            <div style="{display: inline}">
+                {{> available_user}}
+            </div>
+
+            {{/each}}
+        </div>
+    </div>
 </template>
 
 <!-- display an individual user -->
 <template name="available_user">
-	<div class="col-md-2 col-sm-3 col-xs-4">
+	<div style="{width: 110px; display:inline-block;}">
 		<div class="user_avatar" style="{width: 80px; margin-bottom: 10px}">
 			{{#if isMyUser _id}} 
 			<div >
-
                 {{> avatar user=this size="large" shape="circle" }}
                 You: {{getUsername _id}}
 			</div>
@@ -82,14 +125,14 @@
 <!-- Top level template for the chat page -->
 <template name="chat_page">
 
-    <div  style="{background-color: rgba(28, 114, 187, 0.56); height:100%; padding:  15px}">
+    <div  class="container" style="{background-color: rgba(0, 0, 0, 0.5); height:100%; padding:  15px}">
 
         <div class="left-panel hidden-sm hidden-xs" >
                 {{> all_users }}
         </div>
 
 
-        <div class="well main-panel" style="{margin-bottom: 0; background-color: #d8d8d8;}">
+        <div class="well main-panel" style="{margin-bottom: 0; background-color: #d8d8d8; overflow-y: scroll}">
             <div>
                 <div id="chatContainer" class="well row well-lg all-messages " style="{height: 100%; margin-left: -10px; min-width: 500px}">
                     <p class="chatContent">

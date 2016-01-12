@@ -1,6 +1,8 @@
 @import 'css/bubbles';
+@import 'css/editor';
 
 $full-height: 100%;
+$full_size: 100%;
 $zero-margin: 0;
 
 html{
@@ -11,13 +13,41 @@ body{
     background-color: #d8d8d8;
     height: $full-height;
     margin: $zero-margin;
+
 }
 
 .background-div{
     height: $full-height;
-    position: relative;
+    width: $full_size;
+    position: fixed;
+    top: 0;
     background: url('http://lorempixel.com/g/1920/1200/abstract/1/');
     opacity: 0.25;
+}
+
+#footer {
+    padding: 5px;
+    height: 30px;
+    min-height: 30px !important;
+    bottom: 0;
+    position: fixed;
+}
+
+.footerSignature{
+    font-family: "Monotype Corsiva", "Apple Chancery", cursive;
+    font-size: 16px;
+}
+
+.bootcard-panel-container{
+    width: 350px;
+    margin: 10px;
+    float:left;
+}
+
+.bootcard-panel{
+    width: 350px;
+    float: left;
+    margin: 20px;
 }
 
 @media screen {
@@ -33,19 +63,30 @@ body{
     .scroll-y { overflow-y: auto; }
 
     .header.custom-row { height: 75px; top: 0; }
-    .body.custom-row { top: 55px; bottom: 50px; }
+    .body.custom-row { top: 60px; bottom: 50px; }
     .footer.custom-row { height: 50px; bottom: 0; }
-
     /* end of screen rules. */
+}
+
+.navbar-right {
+    padding-top: 10px
 }
 
 .navbar{
     margin-bottom: 0;
+    min-height: 50px;
+    background-color: #e6eef5;
+    z-index: 900;
 }
+
 .navbar-inverse{
     background-color: #555555;
     border-color: #444444;
     color: #cccccc
+}
+
+.navbar-nav{
+    z-index: 1000;
 }
 
 .all-messages{
@@ -94,6 +135,7 @@ body{
 
 .avatar-initials{
     color: #09579A !important;
+    background-color: #E1E8FA !important;
 }
 
 .inactive-chatroom-with-chat-messages{
