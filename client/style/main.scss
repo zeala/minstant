@@ -65,17 +65,28 @@ body{
     .header.custom-row { height: 75px; top: 0; }
     .body.custom-row { top: 60px; bottom: 50px; }
     .footer.custom-row { height: 50px; bottom: 0; }
-
     /* end of screen rules. */
+}
+
+.navbar-right {
+    padding-top: 10px
 }
 
 .navbar{
     margin-bottom: 0;
+    min-height: 50px;
+    background-color: #e6eef5;
+    z-index: 900;
 }
+
 .navbar-inverse{
     background-color: #555555;
     border-color: #444444;
     color: #cccccc
+}
+
+.navbar-nav{
+    z-index: 1000;
 }
 
 .all-messages{

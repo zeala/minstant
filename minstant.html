@@ -11,11 +11,6 @@
     <div class="background-div"></div>
 
 
-	<div style="{position:absolute; width: 100%; top: 0}" >
-        {{> yield "header"}}
-    </div>
-
-	
 	<div class="container body custom-row scroll-y "
          >
         {{> yield "main"}}
@@ -27,6 +22,11 @@
     </div>
 
     {{> yield "footer"}}
+
+
+    <div style="{position:absolute; width: 100%; top: 0}" >
+        {{> yield "header"}}
+    </div>
 
 </template>
 
@@ -51,7 +51,7 @@
 <!-- Top level template for the lobby page -->
 <template name="lobby_page">
     <div  style="{background-color: rgba(255, 255, 255, 0.3); margin-top: 20px; margin-bottom: 20px}">
-        <div style="{max-width: 900px; margin: auto}">
+        <div style="{max-width: 1100px; margin: auto}">
             <div style="{margin:auto; display: table}">
 
                 {{> available_user_list}}
@@ -80,7 +80,16 @@
     <div class="">
         <h2>Registered Users:</h2>
         <h4>Login and click on the avatar to chat</h4>
-        <div>
+        <div style="
+                border:  1px dashed grey;
+                border-radius:  10px;
+                background:  rgba(255,255,255, .3);
+                padding-top: 10px;
+                padding-left: 10px;
+                padding-right: 10px;
+                margin-bottom: 10px;
+                max-width: 1080px;
+            ">
             {{#each users}}
             <div style="{display: inline}">
                 {{> available_user}}
