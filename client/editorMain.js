@@ -13,12 +13,10 @@ Template['editor'].helpers({
     },
     config: function () {
         return function (editor) {
-            console.log(editor);
             editor.setOption("lineNumbers", true);
             editor.setOption("mode", "html");
             editor.setOption("theme", "dracula");
             editor.on("change", function (cm_editor, info) {
-                console.log(cm_editor.getValue());
                 $("#viewer_iframe").contents().find("html").html(cm_editor.getValue());
                 Meteor.call("addEditingUsers", Session.get("docid"));
             });
@@ -93,7 +91,6 @@ Template['insertCommentForm'].helpers({
 //-------------------------------------------------------//
 Template['docMeta'].events({
     "click .js-tog-private": function (event) {
-        console.log(event.target.checked);
         var doc = { _id: Session.get("docid"), isPrivate: event.target.checked };
         Meteor.call("updateDocPrivacy", doc);
     }

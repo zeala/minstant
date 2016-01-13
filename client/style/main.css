@@ -15,18 +15,18 @@
 .bubble2:after, .bubble2:before {
   border-bottom: 15px solid transparent;
   border-left: 25px solid #cfe4fe;
-  bottom: -15px;
+  bottom: -13px;
   content: '';
   position: absolute;
-  left: 22px; }
+  left: 12px; }
 
 .bubble2:before {
   border-left: 15px solid rgba(0, 0, 0, 0.1);
   bottom: -18px;
-  left: 24px; }
+  left: 13px; }
 
 .bubble {
-  background-color: #FFF0A0;
+  background-color: #fbf5ce;
   background-image: linear-gradient(top, rgba(255, 255, 255, 0.5), rgba(255, 255, 255, 0));
   border-radius: 5px;
   box-shadow: inset 0 1px 1px rgba(255, 255, 255, 0.5), 3px 3px 0 rgba(0, 0, 0, 0.1);
@@ -41,16 +41,56 @@
 
 .bubble:after, .bubble:before {
   border-bottom: 15px solid transparent;
-  border-right: 25px solid #fff0a0;
-  bottom: -15px;
+  border-right: 25px solid #fbf5ce;
+  bottom: -12px;
   content: '';
   position: absolute;
-  right: 25px; }
+  right: 12px; }
 
 .bubble:before {
   border-right: 15px solid rgba(0, 0, 0, 0.1);
   bottom: -18px;
-  right: 22px; }
+  right: 11px; }
+
+/*
+  //semi transparent background:
+   background: rgba(255, 255, 255, 0.5) !important;
+
+   height: 100%
+*/
+.ui-layout-container {
+  height: 100% !important; }
+
+.shareJSCM {
+  height: 100% !important; }
+
+.CodeMirror {
+  height: 100%; }
+
+.top-margin {
+  margin-top: 50px; }
+
+#viewer_iframe {
+  width: 100%;
+  height: 100%;
+  border: 1px solid gray;
+  resize: both; }
+
+.light-border {
+  border: 1px solid gray;
+  width: 100%;
+  border-radius: 3px; }
+
+.ui-layout-pane-north,
+.ui-layout-pane-west {
+  background: rgba(255, 255, 255, 0.5) !important; }
+
+.ui-layout-pane-east {
+  background: rgba(255, 255, 255, 0.9) !important; }
+
+.CodeMirror div.CodeMirror-cursor {
+  color: yellow !important;
+  background-color: blue; }
 
 html {
   height: 100%; }
@@ -60,11 +100,45 @@ body {
   height: 100%;
   margin: 0; }
 
+.intro-para {
+  border: 1px dotted white;
+  border-radius: 6px;
+  padding-left: 20px;
+  background: rgba(255, 255, 255, 0.4);
+  margin: auto; }
+
 .background-div {
   height: 100%;
-  position: relative;
+  width: 100%;
+  position: fixed;
+  top: 0;
   background: url("http://lorempixel.com/g/1920/1200/abstract/1/");
   opacity: 0.25; }
+
+#footer {
+  padding: 5px;
+  height: 30px;
+  min-height: 30px !important;
+  bottom: 0;
+  position: fixed; }
+
+.footerSignature {
+  font-family: "Monotype Corsiva", "Apple Chancery", cursive;
+  font-size: 16px; }
+
+.bootcard-panel-container {
+  width: 350px;
+  margin: 10px;
+  float: left; }
+
+.bootcard-panel {
+  width: 350px;
+  float: left;
+  margin: 20px; }
+
+.bootcard-header {
+  font-size: 1.5em;
+  color: maroon; }
 
 @media screen {
   /* start of screen rules. */
@@ -95,7 +169,7 @@ body {
     top: 0; }
 
   .body.custom-row {
-    top: 55px;
+    top: 60px;
     bottom: 50px; }
 
   .footer.custom-row {
@@ -103,13 +177,37 @@ body {
     bottom: 0; }
 
   /* end of screen rules. */ }
+.navbar-right {
+  padding-top: 10px; }
+
 .navbar {
-  margin-bottom: 0; }
+  margin-bottom: 0;
+  min-height: 50px;
+  background-color: #e6eef5;
+  z-index: 900; }
+
+.navbar-inverse .navbar-nav > li > a {
+  color: #ddd; }
+
+.navbar-inverse .navbar-brand {
+  color: #ddd;
+  padding-top: 13px;
+  margin-right: 20px; }
+
+.navbar-nav.pull-right {
+  margin-top: 10px;
+  margin-right: 20px; }
 
 .navbar-inverse {
   background-color: #555555;
   border-color: #444444;
-  color: #dddddd; }
+  color: #dddddd !important; }
+
+#login-buttons a {
+  color: #ddd; }
+
+.navbar-nav {
+  z-index: 1000; }
 
 .all-messages {
   max-height: 450px;
@@ -146,7 +244,8 @@ body {
   width: 50px; }
 
 .avatar-initials {
-  color: #09579A !important; }
+  color: #09579A !important;
+  background-color: #E1E8FA !important; }
 
 .inactive-chatroom-with-chat-messages {
   background: #FFF8C8;

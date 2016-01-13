@@ -124,7 +124,6 @@ Template['chat_page'].events({
         event.preventDefault();
     },
     'keyup #textAreaNewChat': function (event) {
-        console.log(event.keyCode);
         if (event.keyCode == 13 && !event.ctrlKey) {
             sendChat(event);
             event.preventDefault();
