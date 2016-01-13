@@ -59,9 +59,7 @@ Template['chat_page'].helpers({
         return "";
     },
     selectEmoticonCallback: function (val) {
-        console.log(val);
         var callback = function (val) {
-            console.log(" val from callback : " + val);
             $('#textAreaNewChat').val($('#textAreaNewChat').val() + " " + val);
         };
         return callback;

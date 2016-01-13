@@ -5,8 +5,6 @@ Template.all_users.created = function(){
 
 Template.all_users.helpers({
     users:function(){
-        console.log("available user list");
-        console.log(Meteor.users.find().fetch());
         return Meteor.users.find();
     },
     userImage: function(userId){
@@ -121,7 +119,6 @@ Template.all_users.events({
             }
             var chatToUpdate = dict[newChatId];
             chatToUpdate.timeEntered = new Date();
-            console.log(Template.instance())
             dict[newChatId] = chatToUpdate
         }, 100);
     }
