@@ -16,6 +16,13 @@ body{
 
 }
 
+.intro-para{
+    border: 1px dotted white;border-radius:
+    10px;padding:  10px;
+    background: rgba( 255, 255, 255, 0.4);
+    margin: auto;
+}
+
 .background-div{
     height: $full-height;
     width: $full_size;
@@ -50,6 +57,11 @@ body{
     margin: 20px;
 }
 
+.bootcard-header{
+    font-size: 1.5em;
+    color: maroon;
+}
+
 @media screen {
 
     /* start of screen rules. */
@@ -79,10 +91,30 @@ body{
     z-index: 900;
 }
 
+.navbar-inverse .navbar-nav>li>a{
+    color: #ddd;
+}
+
+.navbar-inverse .navbar-brand{
+    color: #ddd;
+    padding-top:13px;
+    margin-right: 20px;
+}
+
+
+.navbar-nav.pull-right{
+    margin-top: 10px;
+    margin-right: 20px;
+}
+
 .navbar-inverse{
     background-color: #555555;
     border-color: #444444;
-    color: #cccccc
+    color: #dddddd !important;
+}
+
+#login-buttons a{
+    color: #ddd;
 }
 
 .navbar-nav{

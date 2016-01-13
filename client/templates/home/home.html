@@ -1,0 +1,83 @@
+<!-- Top level template for the lobby page -->
+<template name="main_page">
+
+
+    <div style="{background-color: rgba(255, 255, 255, 0.3); padding-top: 15px; margin-top: 15px} ">
+        <div class="row" style="{margin:auto; display: table}">
+            <div class="container" style="{text-align: center;}">
+                <div class="intro-para" >
+                    <h2>
+                        About this site:
+                    </h2>
+                    <ul class="list-unstyled" style="{font-size: 1.5em}">
+                        <li>
+                            This site is a collection of applications I build with Meteor to try out the existing packages and functionality and to test my own.
+                        </li>
+                        <li>
+                            The application are build using the following technologies:
+                            <ul>
+                                <li>
+                                    Meteor Blaze
+                                </li>
+                                <li>
+                                    TypeScript
+                                </li>
+                                <li>
+                                    MongoDB
+                                </li>
+                                <li>
+                                    SCSS
+                                </li>
+                                <li>
+                                    Jasmine & Velocity
+                                </li>
+
+                            </ul>
+                        </li>
+                        <li>
+                            <br/>
+                            Please login/register to use the instant messenger and the code editor. Alternatively use username <i>guest</i> and <i>password</i>
+                            for password to browse the features.
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="row" style="{margin:auto; display: table}">
+            {{>bootcard image="/card1.jpg"
+            title="Document Editor"
+            description="Online collaborative document editor"
+            url="https://github.com/zeala/minstant"
+            internalLink="editor"
+            }}
+
+            {{>bootcard image="/card2.jpg"
+            title="Instant Messenger"
+            description="Instant messenger built with Typescript and Blaze"
+            url="https://github.com/zeala/minstant"
+            internalLink="chat"
+            }}
+
+            {{>bootcard image="/card3.jpg"
+                title="Crowducate - open source"
+                description="True Open and Fun Education"
+                externalLink="http://crowducate.me/courses"
+                url="https://github.com/zeala/crowducate-platform/tree/feature/quiz-module"
+
+            }}
+        </div>
+    </div>
+
+    <div  style="{background-color: rgba(255, 255, 255, 0.3); margin-top: 20px; margin-bottom: 20px}">
+        <div style="{max-width: 1100px; margin: auto}">
+            <!--  <div style="{margin:auto; display: table}">
+
+                {{> available_user_list}}
+            </div>-->
+        </div>
+
+    </div>
+
+</template>

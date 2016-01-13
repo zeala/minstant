@@ -5,14 +5,15 @@
 /// <reference path="../shared/ChatService.ts" />
 Router.configure({
     layoutTemplate: 'ApplicationLayout',
-    loadingTemplate: 'loading'
+    loadingTemplate: 'loading',
+    notFoundTemplate: 'notFound'
 });
 // specify the top level route, the page users see when they arrive at the site
 Router.route('/', function () {
     console.log("rendering root /");
     this.render("navbar", { to: "header" });
-    //this.render("lobby_page", {to:"main"});
-    this.render("lobby_page", { to: "fullPage" });
+    //this.render("main_page", {to:"main"});
+    this.render("main_page", { to: "fullPage" });
     this.render("footer", { to: "footer" });
 });
 Router.route("/editor", function () {
@@ -33,6 +34,15 @@ Router.route('/documents/:_id', function () {
     this.render("docItem", { to: "fullPage" });
 });
 // specify a route that allows the current user to chat to another users
+
+Router.route('/chat', function(){
+    if (Session.get("data_loaded") == false) {
+        return;
+    }
+    this.render("navbar", { to: "header" });
+    this.render("chat_page", { to: "fullPage" });
+});
+
 Router.route('/chat/:_id', function () {
     //first check if the data is loaded
     if (Session.get("data_loaded") == false) {
@@ -52,8 +62,6 @@ Router.route('/chat/:_id', function () {
         }
     }
     this.render("navbar", { to: "header" });
-    //this.render("chat_page", {to:"main"});
-    //this.render("", {to:"fullPage"});
     this.render("chat_page", { to: "fullPage" });
 });
 function emoticonize() {

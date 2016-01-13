@@ -2,6 +2,11 @@
 /// <reference path="../typings/jquery.d.ts" />
 /// <reference path="../shared/collections.ts" />
 /// <reference path="../shared/ChatService.ts" />
+
+Accounts.ui.config({
+    passwordSignupFields: "USERNAME_AND_EMAIL"
+});
+
 Meteor.startup(function () {
     Session.set("data_loaded", false);
 });

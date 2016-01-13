@@ -19,7 +19,6 @@ ecmascript              # Enable ECMAScript2015+ syntax in app code
 iron:router
 accounts-password
 twbs:bootstrap
-ian:accounts-ui-bootstrap-3
 elfoslav:css-emoticons
 reactive-var
 utilities:avatar
@@ -41,3 +40,4 @@ mizzao:jquery-ui
 jquery-layout
 mizzao:sharejs-codemirror
 pcuci:bootcards
+accounts-ui
