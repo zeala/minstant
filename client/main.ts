@@ -81,6 +81,13 @@ Template['chat_page'].helpers({
         };
 
         return callback;
+    },
+    isChatEnabled: function(){
+        return Meteor.userId && Session.get("chatId");
+    },
+
+    noCurrentChat:function(){
+        return Session.get("chatId") == undefined;
     }
 });
 

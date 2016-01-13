@@ -58,7 +58,7 @@
                 </li>
                 <li>
                     <a href="https://github.com/zeala/crowducate-platform/tree/feature/quiz-module" target="_blank">
-                        <span><i class="fa fa-github"></i>Crowducate</span>
+                        <span><i class="fa fa-github"></i> Crowducate</span>
                     </a>
                 </li>
             </ul>
@@ -139,7 +139,7 @@
 
                 </div>
             </div>
-            <div class="{{#if currentUser }}{{else}}disabled-form{{/if}}" >
+            <div class="{{#if isChatEnabled }}{{else}}disabled-form{{/if}}" >
                 <form class="js-send-chat col-xs-12"
 
                       id="submitChatForm">
@@ -153,9 +153,15 @@
                                         ></textarea>
                         </div>
                         {{#if currentUser}}
-
+                            {{#if noCurrentChat }}
+                                <h5>Please select a user to chat to</h5>
+                            {{/if}}
                         {{else}}
-                            <h5>Please login to post chat messages</h5>
+                            {{#if currentUser}}
+
+                            {{else}}
+                                <h5>Please login to post chat messages</h5>
+                            {{/if}}
                         {{/if}}
 
                         <div style="{width: 205px; float: left}">

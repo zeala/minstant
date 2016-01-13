@@ -32,13 +32,15 @@ Template.all_users.helpers({
     isSecondUser: function(userId){
         var sessionChatId = Session.get("chatId");
         var chat = Chats.findOne({_id:Session.get("chatId")});
+        if (chat){
+            var user1Id = chat.user1Id;
+            var user2Id = chat.user2Id;
+            var secondUserId = user1Id == Meteor.userId() ? user2Id : user1Id;
 
-        var user1Id = chat.user1Id;
-        var user2Id = chat.user2Id;
-        var secondUserId = user1Id == Meteor.userId() ? user2Id : user1Id;
+            return userId == secondUserId;
+        }
 
-        return userId == secondUserId;
-
+        return false;
     },
     lastVisited: function(userId){
         var sessionChatId = Session.get("chatId");

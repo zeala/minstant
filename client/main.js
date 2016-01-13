@@ -2,11 +2,6 @@
 /// <reference path="../typings/jquery.d.ts" />
 /// <reference path="../shared/collections.ts" />
 /// <reference path="../shared/ChatService.ts" />
-
-Accounts.ui.config({
-    passwordSignupFields: "USERNAME_AND_EMAIL"
-});
-
 Meteor.startup(function () {
     Session.set("data_loaded", false);
 });
@@ -70,6 +65,12 @@ Template['chat_page'].helpers({
             $('#textAreaNewChat').val($('#textAreaNewChat').val() + " " + val);
         };
         return callback;
+    },
+    isChatEnabled: function () {
+        return Meteor.userId && Session.get("chatId");
+    },
+    noCurrentChat: function () {
+        return Session.get("chatId") == undefined;
     }
 });
 Template['chat_message'].helpers({
