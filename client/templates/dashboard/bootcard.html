@@ -8,7 +8,9 @@
                 {{this.description}}
             </div>
             <div style="{width: 350px; margin:auto; max-width: 350px; overflow: hidden}">
-                <a href="{{this.url}}">
+                <a href="{{#if this.internalLink}} {{this.internalLink}} {{else}} {{this.externalLink}} {{/if}}"
+                        target="{{#if this.externalLink}} _blank {{/if}} "
+                        >
                     <img src={{imageLink}} class="img-responsive" style="{max-height: 220px; height: 220px; margin: auto}"/>
                 </a>
             </div>
